@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 27 Jul 2018 pada 15.09
+-- Generation Time: 27 Jul 2018 pada 19.09
 -- Versi Server: 10.1.28-MariaDB
 -- PHP Version: 7.1.10
 
@@ -69,10 +69,9 @@ CREATE TABLE `buku` (
 --
 
 INSERT INTO `buku` (`id`, `nama`, `tahun_terbit`, `id_penulis`, `id_penerbit`, `id_kategori`, `sinopsis`, `sampul`, `berkas`) VALUES
-(1, 'Cintah Tak Kembali', 2013, 1, 2, 5, 'asd asdas dasdas dasd asdasd asdasdas dasd asdas dasdasdsada dasd sadas dsad sadas dsa dsad sad asd asd asdas dasd asdsad asdasd asd asda sdasda sdsadasdas', 'Cintah Tak Kembali_Koala.jpg', 'Cintah Tak Kembali_aasr.docx'),
-(2, 'Suamiku Jarang Pulang', 2015, 2, 1, 5, 'adasdas asdasa d asdas dasdas dsad asdadasdasdas dsad asdas dsad sadasd asdasd asd asdas dasdasddwdadaw assad sad sad asd sad asdas d asdsa dasdas', 'Suamiku Jarang Pulang_Penguins.jpg', 'Suamiku Jarang Pulang_sraa.docx'),
-(3, 'Kamu Ko Selingkuh', 2018, 3, 2, 4, 'asdasd sadasd as dasd asdasdas as a asdsa bda das da d sad as das das d asd sadsa fas fasf asf as fdsa das dsa dsa d asd sa d asd as das da sd asd as das d as das ds das d afg ewf awf ', 'Kamu Ko Selingkuh_Lighthouse.jpg', 'Kamu Ko Selingkuh_aasr.docx'),
-(14, 'Pacarku Hilang', 2009, 2, 2, 5, 'alsdjklaksj alskdjaslkjd as dkjsaldkajskl djasl jlsakd jaslkdj salkdj saldjsaldkj asldsa ldsaj', '1532661870_Hydrangeas.jpg', '1532661870_semple1.docx');
+(14, 'Pacarku Hilang', 2009, 2, 2, 5, 'alsdjklaksj alskdjaslkjd as dkjsaldkajskl djasl jlsakd jaslkdj salkdj saldjsaldkj asldsa ldsaj', '1532661870_Hydrangeas.jpg', '1532661870_semple1.docx'),
+(15, 'Istriku Jarang Pulang', 2015, 1, 2, 5, 'sdfs fdsf sf dsf s fsf sdffs', '1532709846_Penguins.jpg', '1532709846_semple1.docx'),
+(17, 'Tepak Lamuk tak Kunjung Datang', 2018, 1, 1, 4, '', '1532710061_Koala.jpg', '1532710061_semple2.docx');
 
 -- --------------------------------------------------------
 
@@ -306,7 +305,7 @@ ALTER TABLE `anggota`
 -- AUTO_INCREMENT for table `buku`
 --
 ALTER TABLE `buku`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `kategori`

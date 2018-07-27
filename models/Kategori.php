@@ -46,4 +46,11 @@ class Kategori extends \yii\db\ActiveRecord
     {
         return \yii\helpers\ArrayHelper::map(self::find()->all(), 'id', 'nama');
     }
+
+    public function findAllBuku()
+    {
+        return Buku::find()
+            ->andWhere(['id_kategori' => $this->id])
+            ->all();
+    }
 }
