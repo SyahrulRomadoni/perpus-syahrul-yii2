@@ -105,17 +105,21 @@ class BukuController extends Controller
 
         $sampul_lama = $model->sampul;
         $berkas_lama = $model->berkas;
+
         if ($model->load(Yii::$app->request->post()) && $model->validate()){
             
             $sampul = UploadedFile::getInstance($model, 'sampul');
             $berkas = UploadedFile::getInstance($model, 'berkas');
+
             if ($sampul !== null) {
+                unlink(Yii::$app->basePath . '/web/upload/' . $sampul_lama);
                 $model->sampul = time() . '_' . $sampul->name;
                 $sampul->saveAs(Yii::$app->basePath . '/web/upload/' . $model->sampul);
             } else {
                 $model->sampul = $sampul_lama;
             }
             if ($berkas !== null) {
+                unlink(Yii::$app->basePath . '/web/upload/' . $berkas_lama);
                 $model->berkas = time() . '_' . $berkas->name;
                 $berkas->saveAs(Yii::$app->basePath . '/web/upload/' . $model->berkas);
             } else {

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 30 Jul 2018 pada 13.04
+-- Generation Time: 30 Jul 2018 pada 13.19
 -- Versi Server: 10.1.28-MariaDB
 -- PHP Version: 7.1.10
 
@@ -68,7 +68,7 @@ CREATE TABLE `buku` (
 --
 
 INSERT INTO `buku` (`id`, `nama`, `tahun_terbit`, `id_penulis`, `id_penerbit`, `id_kategori`, `sinopsis`, `sampul`, `berkas`) VALUES
-(1, 'Pacarku Hilang Diambil Setan', 2018, 1, 2, 1, 'asdasd as dasdasdas ldj aslk jdalksjd lksajd asjd oaisjd oiamdoasjdoamsodajsodmasod asdasd as dasdasdas ldj aslk jdalksjd lksajd asjd oaisjd oiamdoasjdoamsodajsodmasodasdasd as dasdasdas ldj aslk jdalksjd lksajd asjd oaisjd oiamdoasjdoamsodajsodmasodasdasd as dasdasdas ldj aslk jdalksjd lksajd asjd oaisjd oiamdoasjdoamsodajsodmasodasdasd as dasdasdas ldj aslk jdalksjd lksajd asjd oaisjd oiamdoasjdoamsodajsodmasodasdasd as dasdasdas ldj aslk jdalksjd lksajd asjd oaisjd oiamdoasjdoamsodajsodmasodasdasd as dasdasdas ldj aslk jdalksjd lksajd asjd oaisjd oiamdoasjdoamsodajsodmasodasdasd as dasdasdas ldj aslk jdalksjd lksajd asjd oaisjd oiamdoasjdoamsodajsodmasodasdasd as dasdasdas ldj aslk jdalksjd lksajd asjd oaisjd oiamdoasjdoamsodajsodmasod', '1532948584_Koala.jpg', '1532948584_semple1.docx');
+(1, 'Pacarku Hilang Diambil Setan', 2018, 1, 2, 1, 'asdasd as dasdasdas ldj aslk jdalksjd lksajd asjd oaisjd oiamdoasjdoamsodajsodmasod asdasd as dasdasdas ldj aslk jdalksjd lksajd asjd oaisjd oiamdoasjdoamsodajsodmasodasdasd as dasdasdas ldj aslk jdalksjd lksajd asjd oaisjd oiamdoasjdoamsodajsodmasodasdasd as dasdasdas ldj aslk jdalksjd lksajd asjd oaisjd oiamdoasjdoamsodajsodmasodasdasd as dasdasdas ldj aslk jdalksjd lksajd asjd oaisjd oiamdoasjdoamsodajsodmasodasdasd as dasdasdas ldj aslk jdalksjd lksajd asjd oaisjd oiamdoasjdoamsodajsodmasodasdasd as dasdasdas ldj aslk jdalksjd lksajd asjd oaisjd oiamdoasjdoamsodajsodmasodasdasd as dasdasdas ldj aslk jdalksjd lksajd asjd oaisjd oiamdoasjdoamsodajsodmasodasdasd as dasdasdas ldj aslk jdalksjd lksajd asjd oaisjd oiamdoasjdoamsodajsodmasod', '1532949465_Koala.jpg', '1532949520_semple2.docx');
 
 -- --------------------------------------------------------
 
