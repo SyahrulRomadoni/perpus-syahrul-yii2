@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 30 Jul 2018 pada 12.43
+-- Generation Time: 30 Jul 2018 pada 13.04
 -- Versi Server: 10.1.28-MariaDB
 -- PHP Version: 7.1.10
 
@@ -62,6 +62,13 @@ CREATE TABLE `buku` (
   `sampul` varchar(255) DEFAULT NULL,
   `berkas` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `buku`
+--
+
+INSERT INTO `buku` (`id`, `nama`, `tahun_terbit`, `id_penulis`, `id_penerbit`, `id_kategori`, `sinopsis`, `sampul`, `berkas`) VALUES
+(1, 'Pacarku Hilang Diambil Setan', 2018, 1, 2, 1, 'asdasd as dasdasdas ldj aslk jdalksjd lksajd asjd oaisjd oiamdoasjdoamsodajsodmasod asdasd as dasdasdas ldj aslk jdalksjd lksajd asjd oaisjd oiamdoasjdoamsodajsodmasodasdasd as dasdasdas ldj aslk jdalksjd lksajd asjd oaisjd oiamdoasjdoamsodajsodmasodasdasd as dasdasdas ldj aslk jdalksjd lksajd asjd oaisjd oiamdoasjdoamsodajsodmasodasdasd as dasdasdas ldj aslk jdalksjd lksajd asjd oaisjd oiamdoasjdoamsodajsodmasodasdasd as dasdasdas ldj aslk jdalksjd lksajd asjd oaisjd oiamdoasjdoamsodajsodmasodasdasd as dasdasdas ldj aslk jdalksjd lksajd asjd oaisjd oiamdoasjdoamsodajsodmasodasdasd as dasdasdas ldj aslk jdalksjd lksajd asjd oaisjd oiamdoasjdoamsodajsodmasodasdasd as dasdasdas ldj aslk jdalksjd lksajd asjd oaisjd oiamdoasjdoamsodajsodmasod', '1532948584_Koala.jpg', '1532948584_semple1.docx');
 
 -- --------------------------------------------------------
 
@@ -294,7 +301,7 @@ ALTER TABLE `anggota`
 -- AUTO_INCREMENT for table `buku`
 --
 ALTER TABLE `buku`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `kategori`
