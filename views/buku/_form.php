@@ -7,6 +7,7 @@ use app\models\Penerbit;
 use app\models\Kategori;
 use kartik\select2\Select2;
 use kartik\date\DatePicker;
+use kartik\file\FileInput;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Buku */
@@ -61,9 +62,17 @@ use kartik\date\DatePicker;
 
     <?= $form->field($model, 'sinopsis')->textarea(['rows' => 6]) ?>
 
-    <?= $form->field($model, 'sampul')->fileInput() ?>
+    <?= $form->field($model, 'sampul')->widget(FileInput::classname(), [
+        'data' => $model->sampul,
+        'options' => ['multiple' => true],
+        //'pluginOptions' => ['previewFileType' => 'any', 'allowedFileExtensions' => ['jpg', 'png', 'jpeg']] 
+    ]); ?>
 
-    <?= $form->field($model, 'berkas')->fileInput() ?>
+    <?= $form->field($model, 'berkas')->widget(FileInput::classname(), [
+        'data' => $model->berkas,
+        'options' => ['multiple' => true],
+        //'pluginOptions' => ['previewFileType' => 'any', 'allowedFileExtensions' => ['doc', 'docx', 'pdf', 'xls', 'xlsx']] 
+    ]); ?>
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>

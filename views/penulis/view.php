@@ -33,6 +33,10 @@ $this->params['breadcrumbs'][] = $this->title;
             'alamat:ntext',
             'telepon',
             'email:email',
+            [
+                'label' => 'Jumlah Buku',
+                'value' => $model->getJumlahBuku()
+            ],
         ],
     ]) ?>
 
@@ -47,10 +51,12 @@ $this->params['breadcrumbs'][] = $this->title;
         <th>Nama Buku</th>
         <th>&nbsp;</th>
     </tr>
-    <?php $no=1; foreach ($model->findAllBuku() as $buku): ?>
+    <?php $no=1; ?>
+    <?php $semuaBuku = $model->findAllBuku(); ?>
+    <?php foreach ($semuaBuku as $buku): ?>
     <tr>
-        <td><?= $no; ?></td>
-        <td><?= $buku->nama; ?></td>
+        <td><?= $no++; ?></td>
+        <td><?= Html::a($buku->nama, ['buku/view', 'id' => $buku->id]); ?></td>
         <td>
             <?= Html::a("Edit",["buku/update","id"=>$buku->id],['class' => 'btn btn-primary']) ?>&nbsp;
             <?= Html::a("Hapus",["buku/delete","id"=>$buku->id],['class' => 'btn btn-danger', 'data-method' => 'post', 'data-confirm' => 'Yakin hapus data ini?']) ?>&nbsp;

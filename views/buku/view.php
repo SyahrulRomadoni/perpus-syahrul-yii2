@@ -40,9 +40,32 @@ $this->params['breadcrumbs'][] = $this->title;
             //     'attribute'=>'tahun_terbit',
             //     'value'=> $model->tahun_terbit . '  thn',
             // ],
-            'id_penulis',
-            'id_penerbit',
-            'id_kategori',
+            // 'id_penulis',
+            // 'id_penerbit',
+            // 'id_kategori',
+            [  
+                'attribute' => 'id_penulis',
+                'value' => function($data)
+                {
+                    return $data->getPenulis();
+                }
+            ],
+            // 'id_penerbit',
+            [  
+                'attribute' => 'id_penerbit',
+                'value' => function($data)
+                {
+                    return $data->getPenerbit();
+                }
+            ],
+            // 'id_kategori',
+            [  
+                'attribute' => 'id_kategori',
+                'value' => function($data)
+                {
+                    return $data->getKategori();
+                }
+            ],
             'sinopsis:ntext',
             'sampul',
             'berkas',

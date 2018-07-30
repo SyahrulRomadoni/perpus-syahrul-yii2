@@ -103,28 +103,25 @@ class BukuController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post())) {
-
+        $sampul_lama = $model->sampul;
+        $berkas_lama = $model->berkas;
+        if ($model->load(Yii::$app->request->post()) && $model->validate()){
+            
             $sampul = UploadedFile::getInstance($model, 'sampul');
             $berkas = UploadedFile::getInstance($model, 'berkas');
-
-            $sampul_lama = $model->sampul;
-            if ($sampul_lama != "") {
-                unlink(Yii::$app->basePath .  '/web/upload/' . $sampul_lama);
+            if ($sampul !== null) {
+                $model->sampul = time() . '_' . $sampul->name;
+                $sampul->saveAs(Yii::$app->basePath . '/web/upload/' . $model->sampul);
+            } else {
+                $model->sampul = $sampul_lama;
             }
-
-            $berkas_lama = $model->berkas;
-            if ($berkas_lama != "") {
-                unlink(Yii::$app->basePath . '/web/upload/' . $berkas_lama);
+            if ($berkas !== null) {
+                $model->berkas = time() . '_' . $berkas->name;
+                $berkas->saveAs(Yii::$app->basePath . '/web/upload/' . $model->berkas);
+            } else {
+                $model->berkas = $berkas_lama;
             }
-
-            $model->sampul = time() . '_' . $sampul->name;
-            $model->berkas = time() . '_' . $berkas->name;
-
             $model->save(false);
-
-            $sampul->saveAs(Yii::$app->basePath . '/web/upload/' . $model->sampul);
-            $berkas->saveAs(Yii::$app->basePath . '/web/upload/' . $model->berkas);
 
             return $this->redirect(['view', 'id' => $model->id]);
         }

@@ -43,6 +43,8 @@ AppAsset::register($this);
             ['label' => 'Kategori', 'url' => ['/kategori/index']],
             ['label' => 'Penulis', 'url' => ['/penulis/index']],
             ['label' => 'Penerbit', 'url' => ['/penerbit/index']],
+            ['label' => 'Petugas', 'url' => ['/petugas/index']],
+            ['label' => 'Anggota', 'url' => ['/anggota/index']],
             ['label' => 'Tentang', 'url' => ['/site/about']],
             ['label' => 'Kontak', 'url' => ['/site/contact']],
             Yii::$app->user->isGuest ? (

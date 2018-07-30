@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 28 Jul 2018 pada 21.54
+-- Generation Time: 30 Jul 2018 pada 12.43
 -- Versi Server: 10.1.28-MariaDB
 -- PHP Version: 7.1.10
 
@@ -43,8 +43,7 @@ CREATE TABLE `anggota` (
 
 INSERT INTO `anggota` (`id`, `nama`, `alamat`, `telepon`, `email`, `status_aktif`) VALUES
 (8, 'anggota1', 'ala anggota1', '1242142353254', 'anggota1@gmail.com', 1),
-(9, 'anggota2', 'ala anggota2', '4235423424235', 'anggota2@gmail.com', 1),
-(10, 'test1', 'ala test1', '2321312321432432', 'test1@gmail.com', 1);
+(9, 'anggota2', 'ala anggota2', '4235423424235', 'anggota2@gmail.com', 1);
 
 -- --------------------------------------------------------
 
@@ -63,15 +62,6 @@ CREATE TABLE `buku` (
   `sampul` varchar(255) DEFAULT NULL,
   `berkas` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data untuk tabel `buku`
---
-
-INSERT INTO `buku` (`id`, `nama`, `tahun_terbit`, `id_penulis`, `id_penerbit`, `id_kategori`, `sinopsis`, `sampul`, `berkas`) VALUES
-(14, 'Pacarku Hilang', 2009, 2, 2, 5, 'alsdjklaksj alskdjaslkjd as dkjsaldkajskl djasl jlsakd jaslkdj salkdj saldjsaldkj asldsa ldsaj', '1532661870_Hydrangeas.jpg', '1532661870_semple1.docx'),
-(15, 'Istriku Jarang Pulang', 2015, 1, 2, 5, 'sdfs fdsf sf dsf s fsf sdffs', '1532709846_Penguins.jpg', '1532709846_semple1.docx'),
-(17, 'Tepak Lamuk tak Kunjung Datang', 2018, 1, 1, 4, '', '1532710061_Koala.jpg', '1532710061_semple2.docx');
 
 -- --------------------------------------------------------
 
@@ -210,8 +200,7 @@ INSERT INTO `user` (`id`, `username`, `password`, `id_anggota`, `id_petugas`, `i
 (14, 'anggota1', 'anggota1', 8, 0, 2, 2),
 (15, 'anggota2', 'anggota2', 9, 0, 2, 2),
 (16, 'petugas1', 'petugas1', 0, 4, 3, 3),
-(17, 'petugas2', 'petugas2', 0, 5, 3, 3),
-(18, 'test1', 'test12345', 10, 0, 2, 2);
+(17, 'petugas2', 'petugas2', 0, 5, 3, 3);
 
 -- --------------------------------------------------------
 
@@ -299,7 +288,7 @@ ALTER TABLE `user_role`
 -- AUTO_INCREMENT for table `anggota`
 --
 ALTER TABLE `anggota`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `buku`
@@ -341,7 +330,7 @@ ALTER TABLE `petugas`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `user_role`
