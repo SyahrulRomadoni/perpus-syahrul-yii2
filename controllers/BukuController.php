@@ -63,9 +63,14 @@ class BukuController extends Controller
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
-    public function actionCreate()
+    public function actionCreate($id_kategori=null,$id_penulis=null,$id_penerbit=null)
     {
         $model = new Buku();
+
+        // Mengambil data get dari from view setiap tabel buat di munculkan di tambah buku dengan sudah auto id masing"
+        $model->id_kategori = $id_kategori;
+        $model->id_penulis = $id_penulis;
+        $model->id_penerbit = $id_penerbit;
 
         if ($model->load(Yii::$app->request->post()) && $model->validate()){
             

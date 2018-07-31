@@ -60,6 +60,7 @@ class Penerbit extends \yii\db\ActiveRecord
     {
         return Buku::find()
             ->andWhere(['id_penerbit' => $this->id])
+            ->orderBy(['nama' => SORT_ASC])
             ->all();
     }
 

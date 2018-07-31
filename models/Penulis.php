@@ -60,6 +60,7 @@ class Penulis extends \yii\db\ActiveRecord
     {
         return Buku::find()
             ->andWhere(['id_penulis' => $this->id])
+            ->orderBy(['nama' => SORT_ASC])
             ->all();
     }
 

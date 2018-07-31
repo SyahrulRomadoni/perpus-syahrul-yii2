@@ -45,6 +45,8 @@ $this->params['breadcrumbs'][] = $this->title;
 <div>&nbsp;</div>
 
 <h1>Daftar Buku.</h1>
+<?= Html::a('Tambah Buku', ['buku/create', 'id_penerbit' => $model->id], ['class' => 'btn btn-success']) ?>
+<div>&nbsp;</div>
 <table class="table">
     <tr>
         <th>No</th>

@@ -27,12 +27,12 @@ $this->params['breadcrumbs'][] = $this->title;
 
             //'id',
             'nama',
-            /*[
+            [
                 'header' => 'Jumlah Buku',
                 'value' => function($model) {
-                    return 9;
+                    return $model->getJumlahBuku();
                 }
-            ],*/
+            ],
             ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>
