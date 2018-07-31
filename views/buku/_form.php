@@ -18,7 +18,7 @@ use kartik\file\FileInput;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'nama')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'nama')->textInput(['maxlength' => 255]) ?>
 
     <?= $form->field($model, 'tahun_terbit')->widget(DatePicker::className(), [
             'removeButton' => false,

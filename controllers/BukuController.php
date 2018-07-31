@@ -84,6 +84,7 @@ class BukuController extends Controller
             $sampul->saveAs(Yii::$app->basePath . '/web/upload/' . $model->sampul);
             $berkas->saveAs(Yii::$app->basePath . '/web/upload/' . $model->berkas);
 
+            // Menuju ke view id yang data dibuat.
             return $this->redirect(['view', 'id' => $model->id]);
         }
 
@@ -103,14 +104,17 @@ class BukuController extends Controller
     {
         $model = $this->findModel($id);
 
+        // Mengambi data lama di databases
         $sampul_lama = $model->sampul;
         $berkas_lama = $model->berkas;
 
         if ($model->load(Yii::$app->request->post()) && $model->validate()){
             
+            // Mengambil data baru di layout _from
             $sampul = UploadedFile::getInstance($model, 'sampul');
             $berkas = UploadedFile::getInstance($model, 'berkas');
 
+            // Jika ada data file yang dirubah maka data lama akan di hapus dan di ganti dengan data baru yang sudah diambil jika tidak ada data yang dirubah maka file akan langsung save data-data yang lama.
             if ($sampul !== null) {
                 unlink(Yii::$app->basePath . '/web/upload/' . $sampul_lama);
                 $model->sampul = time() . '_' . $sampul->name;
@@ -125,8 +129,11 @@ class BukuController extends Controller
             } else {
                 $model->berkas = $berkas_lama;
             }
+
+            // Simapan data ke databases
             $model->save(false);
 
+            // Menuju ke view id yang data dibuat.
             return $this->redirect(['view', 'id' => $model->id]);
         }
 

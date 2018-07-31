@@ -61,6 +61,8 @@ class Buku extends \yii\db\ActiveRecord
         ];
     }
 
+
+    // Untuk mengambil id_penulis di tabel buku dirubah jadi nama penulis yang ada di tabel penulis yang akan di muncukan di index buku
     public function getPenulis()
     {
         $model = Penulis::findOne($this->id_penulis);
@@ -72,6 +74,7 @@ class Buku extends \yii\db\ActiveRecord
         }
     }
 
+    // Untuk mengambil id_penerbit di tabel buku dirubah jadi nama penerbit yang ada di tabel penerbit yang akan di muncukan di index buku
     public function getPenerbit()
     {
         $model = Penerbit::findOne($this->id_penerbit);
@@ -83,6 +86,7 @@ class Buku extends \yii\db\ActiveRecord
         }
     }
 
+    // Untuk mengambil id_kategori di tabel buku dirubah jadi nama kategori yang ada di tabel kategori yang akan di muncukan di index buku
     public function getKategori()
     {
         $model = Kategori::findOne($this->id_kategori);

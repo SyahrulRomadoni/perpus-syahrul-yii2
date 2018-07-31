@@ -42,15 +42,25 @@ class Kategori extends \yii\db\ActiveRecord
         ];
     }
 
+    // Untuk mengambil data yang ada di tabel ini sendiri dan di tampilkan di _from tambah buku di bagian create buku.
     public static function getList()
     {
         return \yii\helpers\ArrayHelper::map(self::find()->all(), 'id', 'nama');
     }
 
+    // Untuk menampilkan data buku yang berkaitan dengan from view masing-masing.
     public function findAllBuku()
     {
         return Buku::find()
             ->andWhere(['id_kategori' => $this->id])
             ->all();
+    }
+
+    // Untuk menampilkan jumlah buku yang berkaitan dengan from view masing-masing.
+    public function getJumlahBuku()
+    {
+        return Buku::find()
+            ->andWhere(['id_kategori' => $this->id])
+            ->count();
     }
 }
