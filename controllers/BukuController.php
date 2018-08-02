@@ -198,10 +198,10 @@ class BukuController extends Controller
 
         // Membuat Jarak kertasnya
         $section = $phpWord->addSection([
-            'marginTop' => Converter::cmToTwip(1.80),
-            'marginBottom' => Converter::cmToTwip(1.30),
+            'marginTop' => Converter::cmToTwip(1.50),
+            'marginBottom' => Converter::cmToTwip(1.50),
             'marginLeft' => Converter::cmToTwip(1.2),
-            'marginRight' => Converter::cmToTwip(1.6),
+            'marginRight' => Converter::cmToTwip(1.2),
         ]);
 
         // Custom Style
@@ -217,13 +217,13 @@ class BukuController extends Controller
         // Mulai
         // Label atas, tengah
         $section->addText(
-            'JADWAL PENGADAAN LANGSUNG',
+            'DAFTAR BUKU',
             $headerStyle,
             $paragraphCenter
         );
 
         $section->addText(
-            'PENGADAAN JASA KONSULTASI',
+            'Daftar Buku Perpustakaan Yii2',
             $headerStyle,
             $paragraphCenter
         );
@@ -232,51 +232,51 @@ class BukuController extends Controller
         $section->addTextBreak(1);
 
         // Label samping kiri
-        $section->addText(
-            'PEJABAT PENGADAAN BARANG/JASA',
-            $headerStyle,
-            [
-                'alignment' => 'left'
-            ]
-        );
+        // $section->addText(
+        //     'PEJABAT PENGADAAN BARANG/JASA',
+        //     $headerStyle,
+        //     [
+        //         'alignment' => 'left'
+        //     ]
+        // );
 
-        $section->addText(
-            'SATKER 450417 LAN JAKARTA',
-            $headerStyle,
-            [
-                'alignment' => 'left'
-            ]
-        );
+        // $section->addText(
+        //     'SATKER 450417 LAN JAKARTA',
+        //     $headerStyle,
+        //     [
+        //         'alignment' => 'left'
+        //     ]
+        // );
 
         // Breack
-        $section->addTextBreak(1);
+        //$section->addTextBreak(1);
 
         // Label yang di tengah
-        $section->addText(
-            'PEKERJAAN PEMBANGUNAN SISTEM INFORMASI PENGADAAN (SIP) KANTOR LAN JAKARTA ',
-            $headerStyle,
-            $paragraphCenter
-        );
+        // $section->addText(
+        //     'PEKERJAAN PEMBANGUNAN SISTEM INFORMASI PENGADAAN (SIP) KANTOR LAN JAKARTA ',
+        //     $headerStyle,
+        //     $paragraphCenter
+        // );
 
         // Breack
-        $section->addTextBreak(1);
+        //$section->addTextBreak(1);
 
         // Label di samping
-        $section->addText(
-            'PAGU DANA  :   Rp. 12.000.000,-',
-            $headerStyle,
-            [
-                'alignment' => 'left'
-            ]
-        );
+        // $section->addText(
+        //     'PAGU DANA  :   Rp. 12.000.000,-',
+        //     $headerStyle,
+        //     [
+        //         'alignment' => 'left'
+        //     ]
+        // );
 
-        $section->addText(
-            'HPS       : Rp. 11.000.000,- ',
-            $headerStyle,
-            [
-                'alignment' => 'left'
-            ]
-        );
+        // $section->addText(
+        //     'HPS       : Rp. 11.000.000,- ',
+        //     $headerStyle,
+        //     [
+        //         'alignment' => 'left'
+        //     ]
+        // );
 
         // Table
         $table = $section->addTable([
@@ -287,10 +287,12 @@ class BukuController extends Controller
 
         // Row
         $table->addRow(null);
-        $table->addCell(500)->addText('NO', $headerStyle, $paragraphCenter);
-        $table->addCell(5000)->addText('KEGIATAN', $headerStyle, $paragraphCenter);
-        $table->addCell(5000)->addText('TGL', $headerStyle, $paragraphCenter);
-        $table->addCell(2000)->addText('NOMOR', $headerStyle, $paragraphCenter);
+        $table->addCell(5000)->addText('No', $headerStyle, $paragraphCenter);
+        $table->addCell(5000)->addText('Nama', $headerStyle, $paragraphCenter);
+        $table->addCell(5000)->addText('Tahun Terbit', $headerStyle, $paragraphCenter);
+        $table->addCell(5000)->addText('Penulis', $headerStyle, $paragraphCenter);
+        $table->addCell(5000)->addText('Penerbit', $headerStyle, $paragraphCenter);
+        $table->addCell(5000)->addText('Kategori', $headerStyle, $paragraphCenter);
 
         $semuaBuku = Buku::find()->all();
         $nomor = 1;
@@ -299,14 +301,16 @@ class BukuController extends Controller
         foreach ($semuaBuku as $buku)
         {
             $table->addRow(null);
-            $table->addCell(500)->addText($nomor++, null, $paragraphCenter);
+            $table->addCell(5000)->addText($nomor++, null, $paragraphCenter);
             $table->addCell(5000)->addText($buku->nama, null);
             $table->addCell(5000)->addText($buku->tahun_terbit, null, $paragraphCenter);
-            $table->addCell(2000)->addText($buku->getKategori(), null, $paragraphCenter);
+            $table->addCell(5000)->addText($buku->getPenulis(), null, $paragraphCenter);
+            $table->addCell(5000)->addText($buku->getPenerbit(), null, $paragraphCenter);
+            $table->addCell(5000)->addText($buku->getKategori(), null, $paragraphCenter);
         }
 
         // Tempat penyimpanan file sama nama file.
-        $filename = time() . '_' . 'Laporan-Daftar-Buku.docx';
+        $filename = time() . '_' . 'Daftar-Buku.docx';
         $path = 'document/' . $filename;
         $xmlWrite = IOFactory::createWriter($phpWord, 'Word2007');
         $xmlWrite->save($path);
