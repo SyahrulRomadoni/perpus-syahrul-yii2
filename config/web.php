@@ -18,7 +18,7 @@ $config = [
             //'baseUrl' => '',
         ],
         'urlManager' => [
-            'enablePrettyUrl' => true,
+            'enablePrettyUrl' => false,
             'showScriptName' => false,
             /*'rules' => [
                 '' => 'site/index',

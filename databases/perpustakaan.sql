@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 31 Jul 2018 pada 11.28
+-- Generation Time: 02 Agu 2018 pada 11.58
 -- Versi Server: 10.1.28-MariaDB
 -- PHP Version: 7.1.10
 
@@ -70,7 +70,8 @@ CREATE TABLE `buku` (
 INSERT INTO `buku` (`id`, `nama`, `tahun_terbit`, `id_penulis`, `id_penerbit`, `id_kategori`, `sinopsis`, `sampul`, `berkas`) VALUES
 (1, 'Pacarku Hilang Diambil Setan', 2018, 1, 2, 1, 'asdasd as dasdasdas ldj aslk jdalksjd lksajd asjd oaisjd oiamdoasjdoamsodajsodmasod asdasd as dasdasdas ldj aslk jdalksjd lksajd asjd oaisjd oiamdoasjdoamsodajsodmasodasdasd as dasdasdas ldj aslk jdalksjd lksajd asjd oaisjd oiamdoasjdoamsodajsodmasodasdasd as dasdasdas ldj aslk jdalksjd lksajd asjd oaisjd oiamdoasjdoamsodajsodmasodasdasd as dasdasdas ldj aslk jdalksjd lksajd asjd oaisjd oiamdoasjdoamsodajsodmasodasdasd as dasdasdas ldj aslk jdalksjd lksajd asjd oaisjd oiamdoasjdoamsodajsodmasodasdasd as dasdasdas ldj aslk jdalksjd lksajd asjd oaisjd oiamdoasjdoamsodajsodmasodasdasd as dasdasdas ldj aslk jdalksjd lksajd asjd oaisjd oiamdoasjdoamsodajsodmasodasdasd as dasdasdas ldj aslk jdalksjd lksajd asjd oaisjd oiamdoasjdoamsodajsodmasod', '1532949465_Koala.jpg', '1532949520_semple2.docx'),
 (2, 'Istriku Jarang Pulang', 2018, 2, 1, 2, 'sadadsads dasd asd as d', '1533005418_Penguins.jpg', '1533005418_semple1.docx'),
-(3, 'Akang dah pulang', 2018, 1, 2, 1, 'asdasdadada', '1533005491_Chrysanthemum.jpg', '1533005491_semple1.docx');
+(3, 'Akang dah pulang', 2018, 1, 2, 1, 'asdasdadada', '1533005491_Chrysanthemum.jpg', '1533005491_semple1.docx'),
+(4, 'Cintah tak kunjung kembali', 2018, 3, 1, 5, 'Asdasdsfdsfdsfsdf dsfsdfsdf hghjgjhg', '1533104150_Lighthouse.jpg', '1533104150_semple1.docx');
 
 -- --------------------------------------------------------
 
@@ -303,7 +304,7 @@ ALTER TABLE `anggota`
 -- AUTO_INCREMENT for table `buku`
 --
 ALTER TABLE `buku`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `kategori`

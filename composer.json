@@ -21,7 +21,8 @@
         "kartik-v/yii2-widget-select2": "^2.1",
         "kartik-v/yii2-detail-view": "^1.7",
         "kartik-v/yii2-widget-datepicker": "^1.4",
-        "kartik-v/yii2-widget-fileinput": "^1.0"
+        "kartik-v/yii2-widget-fileinput": "^1.0",
+        "phpoffice/phpword": "^0.15.0"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",
