@@ -241,7 +241,7 @@ class KategoriController extends Controller
         foreach ($semuaKategori as $kategori)
         {
             $table->addRow(null);
-            $table->addCell(5000)->addText($nomor++, null, $paragraphCenter);
+            $table->addCell(500)->addText($nomor++, null, $paragraphCenter);
             $table->addCell(5000)->addText($kategori->nama, null);
             $table->addCell(5000)->addText($kategori->getJumlahBuku(), null, $paragraphCenter);
         }

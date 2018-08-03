@@ -230,7 +230,7 @@ class PenerbitController extends Controller
 
         // Row
         $table->addRow(null);
-        $table->addCell(5000)->addText('No', $headerStyle, $paragraphCenter);
+        $table->addCell(500)->addText('No', $headerStyle, $paragraphCenter);
         $table->addCell(5000)->addText('Nama', $headerStyle, $paragraphCenter);
         $table->addCell(5000)->addText('Alamat', $headerStyle, $paragraphCenter);
         $table->addCell(5000)->addText('Telepon', $headerStyle, $paragraphCenter);

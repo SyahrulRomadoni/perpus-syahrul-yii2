@@ -287,7 +287,7 @@ class BukuController extends Controller
 
         // Row
         $table->addRow(null);
-        $table->addCell(5000)->addText('No', $headerStyle, $paragraphCenter);
+        $table->addCell(500)->addText('No', $headerStyle, $paragraphCenter);
         $table->addCell(5000)->addText('Nama', $headerStyle, $paragraphCenter);
         $table->addCell(5000)->addText('Tahun Terbit', $headerStyle, $paragraphCenter);
         $table->addCell(5000)->addText('Penulis', $headerStyle, $paragraphCenter);
@@ -301,7 +301,7 @@ class BukuController extends Controller
         foreach ($semuaBuku as $buku)
         {
             $table->addRow(null);
-            $table->addCell(5000)->addText($nomor++, null, $paragraphCenter);
+            $table->addCell(500)->addText($nomor++, null, $paragraphCenter);
             $table->addCell(5000)->addText($buku->nama, null);
             $table->addCell(5000)->addText($buku->tahun_terbit, null, $paragraphCenter);
             $table->addCell(5000)->addText($buku->getPenulis(), null, $paragraphCenter);
