@@ -65,16 +65,16 @@ $bundle = yiister\gentelella\assets\Asset::register($this);
                             [
                                 "items" => [
 
-                                    ["label" => "Home", "url" => ["site/index"], "icon" => "files-o"],
-                                    ["label" => "Buku", "url" => ["buku/index"], "icon" => "files-o"],
-                                    ["label" => "Kategori", "url" => ["kategori/index"], "icon" => "files-o"],
-                                    ["label" => "Penerbit", "url" => ["penerbit/index"], "icon" => "files-o"],
-                                    ["label" => "Penulis", "url" => ["penulis/index"], "icon" => "files-o"],
-                                    ["label" => "Petugas", "url" => ["petugas/index"], "icon" => "files-o"],
-                                    ["label" => "Anggota", "url" => ["anggota/index"], "icon" => "files-o"],
-                                    ["label" => "Tentang", "url" => ["site/about"], "icon" => "files-o"],
-                                    ["label" => "Kontak", "url" => ["site/contact"], "icon" => "files-o"],
-                                    ["label" => "Logout", "url" => ["site/logout"], "icon" => "files-o"],
+                                    ["label" => "Home", "url" => ["site/index"], "icon" => "home"],
+                                    ["label" => "Buku", "url" => ["buku/index"], "icon" => "book"],
+                                    ["label" => "Kategori", "url" => ["kategori/index"], "icon" => "list"],
+                                    ["label" => "Penerbit", "url" => ["penerbit/index"], "icon" => "building"],
+                                    ["label" => "Penulis", "url" => ["penulis/index"], "icon" => "user"],
+                                    ["label" => "Anggota", "url" => ["anggota/index"], "icon" => "user"],
+                                    ["label" => "Petugas", "url" => ["petugas/index"], "icon" => "users"],
+                                    ["label" => "Tentang", "url" => ["site/about"], "icon" => "star"],
+                                    ["label" => "Kontak", "url" => ["site/contact"], "icon" => "phone-square"],
+                                    ["label" => "Logout", "url" => ["site/logout"], "icon" => "sign-out"],
 
                                     /*
                                     ["label" => "Home", "url" => "/", "icon" => "home"],
