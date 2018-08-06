@@ -35,7 +35,41 @@ AppAsset::register($this);
             'class' => 'navbar-inverse navbar-fixed-top',
         ],
     ]);
-    echo Nav::widget([
+
+    // User atau Tamu yang Belum login akan masuk kesini.
+    if(Yii::$app->user->isGuest==true) {
+        echo Nav::widget([
+            'options' => ['class' => 'navbar-nav navbar-right'],
+            'items' => [
+                ['label' => 'Home', 'url' => ['/site/index']],
+                ['label' => 'Tentang', 'url' => ['/site/about']],
+                ['label' => 'Kontak', 'url' => ['/site/contact']],
+                ['label' => 'Login', 'url' => ['/site/login']],
+            ],
+        ]);
+    }
+
+    // User atau Tamu yang sudah login akan masuk kesini.
+    if(Yii::$app->user->isGuest==false) {
+        echo Nav::widget([
+            'options' => ['class' => 'navbar-nav navbar-right'],
+            'items' => [
+                ['label' => 'Home', 'url' => ['/site/index']],
+                ['label' => 'Buku', 'url' => ['/buku/index']],
+                ['label' => 'Kategori', 'url' => ['/kategori/index']],
+                ['label' => 'Penerbit', 'url' => ['/penerbit/index']],
+                ['label' => 'Penulis', 'url' => ['/penulis/index']],
+                ['label' => 'Petugas', 'url' => ['/petugas/index']],
+                ['label' => 'Anggota', 'url' => ['/anggota/index']],
+                ['label' => 'Tentang', 'url' => ['/site/about']],
+                ['label' => 'Kontak', 'url' => ['/site/contact']],
+                ['label' => 'Logout', 'url' => ['/site/logout']]
+            ],
+        ]);
+    }
+
+    // Default Yii2
+    /*echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
             ['label' => 'Home', 'url' => ['/site/index']],
@@ -60,7 +94,8 @@ AppAsset::register($this);
                 . '</li>'
             )
         ],
-    ]);
+    ]);*/
+
     NavBar::end();
     ?>
 
