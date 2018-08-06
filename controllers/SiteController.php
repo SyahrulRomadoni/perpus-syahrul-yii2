@@ -12,6 +12,9 @@ use app\models\ContactForm;
 
 class SiteController extends Controller
 {
+    // Buat repleas layout dengan default test.
+    public $layout = 'main';
+
     /**
      * {@inheritdoc}
      */
@@ -63,6 +66,8 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+        // Buat Tampilan static sendiri
+        //$this->layout = 'test';
         return $this->render('index');
     }
 
