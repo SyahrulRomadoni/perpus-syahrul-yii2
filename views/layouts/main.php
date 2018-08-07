@@ -37,7 +37,7 @@ $bundle = yiister\gentelella\assets\Asset::register($this);
             <div class="left_col scroll-view">
 
                 <div class="navbar nav_title" style="border: 0;">
-                    <a href="/" class="site_title"><i class="fa fa-paw"></i> <span>Gentellela Alela!</span></a>
+                    <a href="/" class="site_title"><i class="fa fa-book"></i> <span>Perpustakaan</span></a>
                 </div>
                 <div class="clearfix"></div>
 
@@ -186,7 +186,7 @@ $bundle = yiister\gentelella\assets\Asset::register($this);
                                 </li>
                                 <li>
                                     <a href="javascript:;">
-                                        <span class="badge bg-red pull-right">50%</span>
+                                        <!-- <span class="badge bg-red pull-right">50%</span> -->
                                         <span>Settings</span>
                                     </a>
                                 </li>
@@ -201,61 +201,19 @@ $bundle = yiister\gentelella\assets\Asset::register($this);
                         <li role="presentation" class="dropdown">
                             <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
                                 <i class="fa fa-envelope-o"></i>
-                                <span class="badge bg-green">6</span>
+                                <span class="badge bg-green">1</span>
                             </a>
                             <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
                                 <li>
                                     <a>
-                      <span class="image">
+                                    <span class="image">
                                         <img src="http://placehold.it/128x128" alt="Profile Image" />
                                     </span>
-                      <span>
+                                    <span>
                                         <span>John Smith</span>
-                      <span class="time">3 mins ago</span>
-                      </span>
-                      <span class="message">
-                                        Film festivals used to be do-or-die moments for movie makers. They were where...
+                                        <span class="time">3 mins ago</span>
                                     </span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a>
-                      <span class="image">
-                                        <img src="http://placehold.it/128x128" alt="Profile Image" />
-                                    </span>
-                      <span>
-                                        <span>John Smith</span>
-                      <span class="time">3 mins ago</span>
-                      </span>
-                      <span class="message">
-                                        Film festivals used to be do-or-die moments for movie makers. They were where...
-                                    </span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a>
-                      <span class="image">
-                                        <img src="http://placehold.it/128x128" alt="Profile Image" />
-                                    </span>
-                      <span>
-                                        <span>John Smith</span>
-                      <span class="time">3 mins ago</span>
-                      </span>
-                      <span class="message">
-                                        Film festivals used to be do-or-die moments for movie makers. They were where...
-                                    </span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a>
-                      <span class="image">
-                                        <img src="http://placehold.it/128x128" alt="Profile Image" />
-                                    </span>
-                      <span>
-                                        <span>John Smith</span>
-                      <span class="time">3 mins ago</span>
-                      </span>
-                      <span class="message">
+                                    <span class="message">
                                         Film festivals used to be do-or-die moments for movie makers. They were where...
                                     </span>
                                     </a>
@@ -305,8 +263,7 @@ $bundle = yiister\gentelella\assets\Asset::register($this);
         <!-- footer content -->
         <footer>
             <div class="pull-right">
-                Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com" rel="nofollow" target="_blank">Colorlib</a><br />
-                Extension for Yii framework 2 by <a href="http://yiister.ru" rel="nofollow" target="_blank">Yiister</a>
+                &copy; Copyright By: Syahrul Romadoni <?= date('Y') ?>.
             </div>
             <div class="clearfix"></div>
         </footer>

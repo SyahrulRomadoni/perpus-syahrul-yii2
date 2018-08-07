@@ -18,8 +18,8 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Tambah Buku', ['create'], ['class' => 'btn btn-success']) ?>
-        <?= Html::a('Export Daftar Buku ke Word', ['daftar-buku'], ['class' => 'btn btn-info btn-flat']) ?>
+        <?= Html::a('<i class="fa fa-plus"> Tambah Buku</i>', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('<i class="fa fa-print"> Export Daftar Buku ke Word</i>', ['daftar-buku'], ['class' => 'btn btn-info btn-flat']) ?>
     </p>
 
     <?= GridView::widget([

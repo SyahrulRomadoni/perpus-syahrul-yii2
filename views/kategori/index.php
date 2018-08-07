@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\KategoriSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Kategoris';
+$this->title = 'Kategori';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="kategori-index">
@@ -16,8 +16,8 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Tambah Kategori', ['create'], ['class' => 'btn btn-success']) ?>
-        <?= Html::a('Export Daftar Kategori ke Word', ['daftar-kategori'], ['class' => 'btn btn-info btn-flat']) ?>
+        <?= Html::a('<i class="fa fa-plus"> Tambah Kategori</i>', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('<i class="fa fa-print"> Export Daftar Kategori ke Word</i>', ['daftar-kategori'], ['class' => 'btn btn-info btn-flat']) ?>
     </p>
 
     <?= GridView::widget([

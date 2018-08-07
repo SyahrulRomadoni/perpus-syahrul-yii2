@@ -8,6 +8,7 @@ use app\models\Kategori;
 use kartik\select2\Select2;
 use kartik\date\DatePicker;
 use kartik\file\FileInput;
+use dosamigos\tinymce\TinyMce;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Buku */
@@ -66,7 +67,18 @@ use kartik\file\FileInput;
     ]); ?>
     <?php //} ?>
 
-    <?= $form->field($model, 'sinopsis')->textarea(['rows' => 6]) ?>
+    <?= $form->field($model, 'sinopsis')->widget(TinyMce::className(), [
+        'options' => ['rows' => 6],
+        'language' => 'es',
+        'clientOptions' => [
+            'plugins' => [
+                "advlist autolink lists link charmap print preview anchor",
+                "searchreplace visualblocks code fullscreen",
+                "insertdatetime media table contextmenu paste"
+            ],
+            'toolbar' => "undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
+        ]
+    ]);?>
 
     <?= $form->field($model, 'sampul')->widget(FileInput::classname(), [
         'data' => $model->sampul,
