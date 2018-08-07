@@ -11,6 +11,7 @@ use yii\filters\VerbFilter;
 use PhpOffice\PhpWord\IOFactory;
 use PhpOffice\PhpWord\PhpWord;
 use PhpOffice\PhpWord\Shared\Converter;
+use PhpOffice\PhpWord\Element\Section;
 
 /**
  * KategoriController implements the CRUD actions for Kategori model.
@@ -141,8 +142,8 @@ class KategoriController extends Controller
 
         // Membuat Jarak kertasnya
         $section = $phpWord->addSection([
-            'marginTop' => Converter::cmToTwip(1.50),
-            'marginBottom' => Converter::cmToTwip(1.50),
+            'marginTop' => Converter::cmToTwip(1.2),
+            'marginBottom' => Converter::cmToTwip(1.2),
             'marginLeft' => Converter::cmToTwip(1.2),
             'marginRight' => Converter::cmToTwip(1.2),
         ]);
@@ -158,6 +159,7 @@ class KategoriController extends Controller
         ];
 
         // Mulai
+
         // Label atas, tengah
         $section->addText(
             'DAFTAR KATEGORI',
@@ -248,6 +250,138 @@ class KategoriController extends Controller
 
         // Tempat penyimpanan file sama nama file.
         $filename = time() . '_' . 'Daftar-Kategori.docx';
+        $path = 'document/' . $filename;
+        $xmlWrite = IOFactory::createWriter($phpWord, 'Word2007');
+        $xmlWrite->save($path);
+
+        return $this->redirect($path);
+    }
+
+    public function actionTes()
+    {
+        // Membuat model baru
+        $phpWord = new PhpWord();
+
+        // Membuat default ukuran fontz
+        $phpWord->setDefaultFontSize(10);
+
+        // Membuat default fontz
+        $phpWord->setDefaultFontName('Footlight MT Light');
+
+        // Membuat Jarak kertasnya
+        $section = $phpWord->addSection([
+            'marginTop' => Converter::cmToTwip(1),
+            'marginBottom' => Converter::cmToTwip(1),
+            'marginLeft' => Converter::cmToTwip(2.5),
+            'marginRight' => Converter::cmToTwip(2.5),
+        ]);
+
+        // Custom Style
+        // Define styles
+        $fontStyleName = 'myOwnStyle';
+        $phpWord->addFontStyle($fontStyleName, array('color' => 'FF0000'));
+        $paragraphStyleName = 'P-Style';
+        $phpWord->addParagraphStyle($paragraphStyleName, array('spaceAfter' => 95));
+        $multilevelNumberingStyleName = 'multilevel';
+        $phpWord->addNumberingStyle(
+            $multilevelNumberingStyleName,
+            array(
+                'type'   => 'multilevel',
+                'levels' => array(
+                    array('format' => 'decimal', 'text' => '%1.', 'left' => 360, 'hanging' => 360, 'tabPos' => 360),
+                    array('format' => 'upperLetter', 'text' => '%2.', 'left' => 720, 'hanging' => 360, 'tabPos' => 720),
+                ),
+            )
+        );
+
+        $fontStyle1 = [
+            'bold' => true,
+        ];
+
+        $fontStyle2 = [
+            'underline' => 'single',
+            'bold' => true,
+        ];
+
+        $paragraphCenter = [
+            'alignment' => 'center',
+        ];
+
+        // Mulai
+
+        // Images
+        $section->addImage('images/Lan.png', array('width' => 80, 'height' => 60, 'alignment' => \PhpOffice\PhpWord\SimpleType\Jc::CENTER));
+
+        // Label atas, tengah
+        $section->addText(
+            'LEMBAGA ADMINISTRASI NEGARA',
+            $fontStyle1,
+            $paragraphCenter
+        );
+
+        $section->addText(
+            'REPUBLIK INDONESIA',
+            $fontStyle1,
+            $paragraphCenter
+        );
+
+        // Breack
+        $section->addTextBreak(1);
+
+        $section->addText(
+            'BERITA ACARA KLARIFIKASI DAN NEGOSIASI',
+            $fontStyle2,
+            $paragraphCenter
+        );
+
+        $section->addText(
+            'Nomor : 157/PP/PBJ 01.2/450417',
+            $fontStyle1,
+            $paragraphCenter
+        );
+
+        $section->addText(
+            'Tanggal : ' . date('d F Y'),
+            $fontStyle1,
+            $paragraphCenter
+        );
+
+        // Breack
+        $section->addTextBreak(1);
+
+        $section->addText(
+            'Pada hari ini Jum’at tanggal Delapan belas bulan Mei tahun Dua ribu delapan belas (' . date('d-m-Y') .') dimulai  pada  pukul 14.00 WIB, bertempat di Ruang Rapat Layanan Pengadaan Barang/Jasa Kantor LAN Pusat Jakarta, Jl.Veteran No. 10 Jakarta, telah diadakan Rapat Klarifikasi dan Negosiasi terhadap Dokumen Penawaran untuk Pekerjaan Pembangunan Sistem Informasi Pengadaan (SIP) Kantor LAN Jakarta Jl. Veteran No. 10, Jakarta Pusat.'
+        );
+
+        // Breack
+        $section->addTextBreak(1);
+
+        // Lists
+        $section->addText('I Hadir dalam rapat :');
+        $section->addListItem('Pejabat Pengadaan Barang/Jasa Satker 450417 LAN Jakarta
+            Dwi Astuti, ST', 0, null, $multilevelNumberingStyleName);
+        $section->addListItem('Penyedia:
+            Konsultan Perorangan Diwakili oleh :
+            Sdr. Thomas Alfa Edison', 0, null, $multilevelNumberingStyleName);
+
+        // Breack
+        $section->addTextBreak(1);
+        $section->addText('II Berdasarkan klarifikasi dan negosiasi teknis dan harga, dihasilkan hal-hal sebagai berikut:');
+        $section->addListItem('Dokumen Penawaran Teknis :
+            Penyedia sanggup untuk melaksanakan pekerjaan sesuai dengan spesifikasi teknis sebagaimana tercantum dalam dokumen pengadaan;', 0, null, $multilevelNumberingStyleName);
+        $section->addListItem('Dokumen Penawaran Harga:', 0, null, $multilevelNumberingStyleName);
+        $section->addListItem('Kewajaran biaya pada Rincian Biaya Langsung Personil (remuneration);', 1, null, $multilevelNumberingStyleName);
+        $section->addListItem('Kewajaran Biaya tenaga ahli;', 1, null, $multilevelNumberingStyleName);
+        $section->addListItem('Kewajaran biaya pada Rincian Biaya Langsung Non-Personil (direct reimbursable cost)', 1, null, $multilevelNumberingStyleName);
+        $section->addListItem('Disepakati bahwa harga penawaran terkoreksi yang diajukan sebesar Rp. 11.000.000,- (Sebelas juta rupiah) dinegosiasi menjadi                 Rp. 10.000.000,- (Sepuluh juta rupiah) dapat diterima.', 1, null, $multilevelNumberingStyleName);
+
+        // Breack
+        $section->addTextBreak(1);
+        $section->addText('III Rapat ditutup pukul 15.00 WIB.');
+        $section->addText('Demikian Berita Acara ini dibuat dalam rangkap secukupnya untuk dipergunakan seperlunya.');
+
+        // Tempat penyimpanan file sama nama file.
+        $filename = time() . '_' . 'Daftar-Tes.docx';
         $path = 'document/' . $filename;
         $xmlWrite = IOFactory::createWriter($phpWord, 'Word2007');
         $xmlWrite->save($path);
