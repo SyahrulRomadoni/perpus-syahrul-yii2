@@ -66,12 +66,56 @@ $bundle = yiister\gentelella\assets\Asset::register($this);
                                 "items" => [
 
                                     ["label" => "Home", "url" => ["site/index"], "icon" => "home"],
-                                    ["label" => "Buku", "url" => ["buku/index"], "icon" => "book"],
-                                    ["label" => "Kategori", "url" => ["kategori/index"], "icon" => "list"],
-                                    ["label" => "Penerbit", "url" => ["penerbit/index"], "icon" => "building"],
-                                    ["label" => "Penulis", "url" => ["penulis/index"], "icon" => "user"],
-                                    ["label" => "Anggota", "url" => ["anggota/index"], "icon" => "user"],
-                                    ["label" => "Petugas", "url" => ["petugas/index"], "icon" => "users"],
+                                    //["label" => "Buku", "url" => ["buku/index"], "icon" => "book"],
+                                    [
+                                        "label" => "Buku",
+                                        "url" => "#",
+                                        "icon" => "book",
+                                        "items" => [
+                                            [
+                                                "label" => "Buku",
+                                                "icon" => "book",
+                                                "url" => ["buku/index"],
+                                            ],
+                                            [
+                                                "label" => "Kategori",
+                                                "icon" => "list",
+                                                "url" => ["kategori/index"],
+                                            ],
+                                            [
+                                                "label" => "Penerbit",
+                                                "icon" => "building",
+                                                "url" => ["penerbit/index"],
+                                            ],
+                                            [
+                                                "label" => "Penulis",
+                                                "icon" => "user",
+                                                "url" => ["penulis/index"],
+                                            ],
+                                        ],
+                                    ],
+                                    [
+                                        "label" => "User",
+                                        "url" => "#",
+                                        "icon" => "user",
+                                        "items" => [
+                                            [
+                                                "label" => "Anggota",
+                                                "icon" => "user",
+                                                "url" => ["anggota/index"],
+                                            ],
+                                            [
+                                                "label" => "Petugas",
+                                                "icon" => "users",
+                                                "url" => ["petugas/index"],
+                                            ],
+                                        ],
+                                    ],
+                                    //["label" => "Kategori", "url" => ["kategori/index"], "icon" => "list"],
+                                    //["label" => "Penerbit", "url" => ["penerbit/index"], "icon" => "building"],
+                                    //["label" => "Penulis", "url" => ["penulis/index"], "icon" => "user"],
+                                    //["label" => "Anggota", "url" => ["anggota/index"], "icon" => "user"],
+                                    //["label" => "Petugas", "url" => ["petugas/index"], "icon" => "users"],
                                     ["label" => "Tentang", "url" => ["site/about"], "icon" => "star"],
                                     ["label" => "Kontak", "url" => ["site/contact"], "icon" => "phone-square"],
                                     ["label" => "Logout", "url" => ["site/logout"], "icon" => "sign-out"],

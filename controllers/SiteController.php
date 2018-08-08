@@ -26,7 +26,7 @@ class SiteController extends Controller
                 'only' => ['logout'],
                 'rules' => [
                     [
-                        'actions' => ['logout'],
+                        'actions' => ['logout','index'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -68,7 +68,13 @@ class SiteController extends Controller
     {
         // Buat Tampilan static sendiri
         //$this->layout = 'test';
-        return $this->render('index');
+        //return $this->render('index');
+
+        if (!Yii::$app->user->isGuest) {
+            return $this->redirect(['buku/index']);
+        } else {
+            return $this->redirect(['site/login']);
+        }
     }
 
     /**
@@ -78,6 +84,7 @@ class SiteController extends Controller
      */
     public function actionLogin()
     {
+        $this->layout = 'main-login';
         if (!Yii::$app->user->isGuest) {
             return $this->goHome();
         }
