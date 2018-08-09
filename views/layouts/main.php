@@ -30,7 +30,7 @@ AppAsset::register($this);
     <?php
     NavBar::begin([
         //'brandLabel' => Yii::$app->name,
-        'brandLabel' => 'Perpustakaan Yii2 GitLab',
+        'brandLabel' => 'Perpustakaan Yii2',
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
             'class' => 'navbar-inverse navbar-fixed-top',
