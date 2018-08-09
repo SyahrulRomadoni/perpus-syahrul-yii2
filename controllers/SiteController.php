@@ -64,7 +64,7 @@ class SiteController extends Controller
         // Default Yii2
         //return $this->render('index');
         if (!Yii::$app->user->isGuest) {
-            return $this->redirect(['buku/index']);
+            return $this->redirect(['site/dashboard']);
         } else {
             return $this->redirect(['site/login']);
         }
@@ -130,5 +130,11 @@ class SiteController extends Controller
     public function actionAbout()
     {
         return $this->render('about');
+    }
+
+    // Custom Sendiri
+    public function actionDashboard()
+    {
+        return $this->render('dashboard');
     }
 }

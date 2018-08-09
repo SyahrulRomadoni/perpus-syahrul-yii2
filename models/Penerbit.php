@@ -71,4 +71,26 @@ class Penerbit extends \yii\db\ActiveRecord
             ->andWhere(['id_penerbit' => $this->id])
             ->count();
     }
+
+    // Untuk menghitung jumlah data yang ada di tabel ini sendiri dan di tampilkan chart kotak.
+    public static function getCount()
+    {
+        return static::find()->count();
+    }
+
+    // Mengambil semua data yang ada di tabel buku yang dimana id buku akan ditampilkan berdasarkan id_*** / id_*** akan mengambil data di buku yang berkaitan dengan id_***.
+    public function getManyBuku()
+    {
+        return $this->hasMany(Buku::class, ['id_Penerbit' => 'id']);
+    }
+
+    // Menjumlah semua data buku yang berkaitan dengan id_***.
+    public static function getGrafikList()
+    {
+        $data = [];
+        foreach (static::find()->all() as $penerbit) {
+            $data[] = [$penerbit->nama, (int) $penerbit->getManyBuku()->count()];
+        }
+        return $data;
+    }
 }

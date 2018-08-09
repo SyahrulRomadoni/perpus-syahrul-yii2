@@ -30,7 +30,8 @@
             [
                 'options' => ['class' => 'sidebar-menu tree', 'data-widget'=> 'tree'],
                 'items' => [
-                    ['label' => 'Rumah', 'icon' => 'home', 'url' => ['site/index'],],
+                    //['label' => 'Rumah', 'icon' => 'home', 'url' => ['site/index'],],
+                    ['label' => 'Home', 'icon' => 'home', 'url' => ['site/dashboard'],],
                     ['label' => 'Menu Buku', 'options' => ['class' => 'header']],
                     [
                         'label' => 'Buku',
@@ -64,6 +65,9 @@
                             ['label' => 'Login', 'url' => ['site/login'], 'visible' => Yii::$app->user->isGuest],
                         ],
                     ],
+                    ['label' => 'Lain-lain', 'options' => ['class' => 'header']],
+                    ['label' => 'Kontak', 'icon' => 'tty', 'url' => ['site/contact'],],
+                    ['label' => 'Tentang', 'icon' => 'font', 'url' => ['site/about'],],
                     /*[
                         'label' => 'Some tools',
                         'icon' => 'share',

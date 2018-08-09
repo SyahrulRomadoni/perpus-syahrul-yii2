@@ -64,4 +64,26 @@ class Kategori extends \yii\db\ActiveRecord
             ->andWhere(['id_kategori' => $this->id])
             ->count();
     }
+
+    // Untuk menghitung jumlah data yang ada di tabel ini sendiri dan di tampilkan chart kotak.
+    public static function getCount()
+    {
+        return static::find()->count();
+    }
+
+    // Mengambil semua data yang ada di tabel buku yang dimana id buku akan ditampilkan berdasarkan id_*** / id_*** akan mengambil data di buku yang berkaitan dengan id_***.
+    public function getManyBuku()
+    {
+        return $this->hasMany(Buku::class, ['id_kategori' => 'id']);
+    }
+
+    // Menjumlah semua data buku yang berkaitan dengan id_***.
+    public static function getGrafikList()
+    {
+        $data = [];
+        foreach (static::find()->all() as $kategori) {
+            $data[] = [$kategori->nama, (int) $kategori->getManyBuku()->count()];
+        }
+        return $data;
+    }
 }

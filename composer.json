@@ -22,7 +22,9 @@
         "kartik-v/yii2-widget-datepicker": "^1.4",
         "kartik-v/yii2-widget-fileinput": "^1.0",
         "phpoffice/phpword": "^0.15.0",
-        "dmstr/yii2-adminlte-asset": "^2.1"
+        "dmstr/yii2-adminlte-asset": "^2.1",
+        "2amigos/yii2-tinymce-widget": "^1.1",
+        "miloschuman/yii2-highcharts-widget": "^6.0"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",

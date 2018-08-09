@@ -51,4 +51,10 @@ class Anggota extends \yii\db\ActiveRecord
             'status_aktif' => 'Status Aktif',
         ];
     }
+    
+    // Untuk menghitung jumlah data yang ada di tabel ini sendiri dan di tampilkan chart kotak.
+    public static function getCount()
+    {
+        return static::find()->count();
+    }
 }
