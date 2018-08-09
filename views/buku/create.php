@@ -7,7 +7,7 @@ use yii\helpers\Html;
 /* @var $model app\models\Buku */
 
 $this->title = 'Tambah Buku';
-$this->params['breadcrumbs'][] = ['label' => 'Buku', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Bukus', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="buku-create">

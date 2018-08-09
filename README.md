@@ -1,2 +1,3 @@
-# perpus-syahrul-yii2
-Project Perpustakaan Yii2
+# Perpus-yii2
+
+Perpustakaan Framework Yii2

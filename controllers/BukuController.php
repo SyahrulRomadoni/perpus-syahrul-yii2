@@ -101,6 +101,20 @@ class BukuController extends Controller
         ]);
     }
 
+    // Default Yii2
+    /*public function actionCreate()
+    {
+        $model = new Buku();
+
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return $this->redirect(['view', 'id' => $model->id]);
+        }
+
+        return $this->render('create', [
+            'model' => $model,
+        ]);
+    }*/
+
     /**
      * Updates an existing Buku model.
      * If update is successful, the browser will be redirected to the 'view' page.
@@ -150,6 +164,20 @@ class BukuController extends Controller
         ]);
     }
 
+    // Default Yii2
+    /*public function actionUpdate($id)
+    {
+        $model = $this->findModel($id);
+
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return $this->redirect(['view', 'id' => $model->id]);
+        }
+
+        return $this->render('update', [
+            'model' => $model,
+        ]);
+    }*/
+
     /**
      * Deletes an existing Buku model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
@@ -169,6 +197,14 @@ class BukuController extends Controller
         return $this->redirect(['index']);
     }
 
+    // Default Yii2
+    /*public function actionDelete($id)
+    {
+        $this->findModel($id)->delete();
+
+        return $this->redirect(['index']);
+    }*/
+
     /**
      * Finds the Buku model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
@@ -181,7 +217,7 @@ class BukuController extends Controller
         if (($model = Buku::findOne($id)) !== null) {
             return $model;
         }
-        
+
         throw new NotFoundHttpException('The requested page does not exist.');
     }
 

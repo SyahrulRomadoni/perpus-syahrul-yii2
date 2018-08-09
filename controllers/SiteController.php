@@ -12,9 +12,6 @@ use app\models\ContactForm;
 
 class SiteController extends Controller
 {
-    // Buat repleas layout dengan default test.
-    public $layout = 'main';
-
     /**
      * {@inheritdoc}
      */
@@ -26,20 +23,18 @@ class SiteController extends Controller
                 'only' => ['logout'],
                 'rules' => [
                     [
-                        'actions' => ['logout','index'],
+                        'actions' => ['logout'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
                 ],
             ],
-            /*
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
                     'logout' => ['post'],
                 ],
             ],
-            */
         ];
     }
 
@@ -66,10 +61,8 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        // Buat Tampilan static sendiri
-        //$this->layout = 'test';
+        // Default Yii2
         //return $this->render('index');
-
         if (!Yii::$app->user->isGuest) {
             return $this->redirect(['buku/index']);
         } else {
@@ -84,7 +77,6 @@ class SiteController extends Controller
      */
     public function actionLogin()
     {
-        $this->layout = 'main-login';
         if (!Yii::$app->user->isGuest) {
             return $this->goHome();
         }

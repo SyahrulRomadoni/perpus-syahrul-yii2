@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 02 Agu 2018 pada 11.58
+-- Generation Time: 08 Agu 2018 pada 09.33
 -- Versi Server: 10.1.28-MariaDB
 -- PHP Version: 7.1.10
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `perpustakaan`
+-- Database: `perpustakaan2`
 --
 
 -- --------------------------------------------------------
@@ -68,10 +68,7 @@ CREATE TABLE `buku` (
 --
 
 INSERT INTO `buku` (`id`, `nama`, `tahun_terbit`, `id_penulis`, `id_penerbit`, `id_kategori`, `sinopsis`, `sampul`, `berkas`) VALUES
-(1, 'Pacarku Hilang Diambil Setan', 2018, 1, 2, 1, 'asdasd as dasdasdas ldj aslk jdalksjd lksajd asjd oaisjd oiamdoasjdoamsodajsodmasod asdasd as dasdasdas ldj aslk jdalksjd lksajd asjd oaisjd oiamdoasjdoamsodajsodmasodasdasd as dasdasdas ldj aslk jdalksjd lksajd asjd oaisjd oiamdoasjdoamsodajsodmasodasdasd as dasdasdas ldj aslk jdalksjd lksajd asjd oaisjd oiamdoasjdoamsodajsodmasodasdasd as dasdasdas ldj aslk jdalksjd lksajd asjd oaisjd oiamdoasjdoamsodajsodmasodasdasd as dasdasdas ldj aslk jdalksjd lksajd asjd oaisjd oiamdoasjdoamsodajsodmasodasdasd as dasdasdas ldj aslk jdalksjd lksajd asjd oaisjd oiamdoasjdoamsodajsodmasodasdasd as dasdasdas ldj aslk jdalksjd lksajd asjd oaisjd oiamdoasjdoamsodajsodmasodasdasd as dasdasdas ldj aslk jdalksjd lksajd asjd oaisjd oiamdoasjdoamsodajsodmasod', '1532949465_Koala.jpg', '1532949520_semple2.docx'),
-(2, 'Istriku Jarang Pulang', 2018, 2, 1, 2, 'sadadsads dasd asd as d', '1533005418_Penguins.jpg', '1533005418_semple1.docx'),
-(3, 'Akang dah pulang', 2018, 1, 2, 1, 'asdasdadada', '1533005491_Chrysanthemum.jpg', '1533005491_semple1.docx'),
-(4, 'Cintah tak kunjung kembali', 2018, 3, 1, 5, 'Asdasdsfdsfdsfsdf dsfsdfsdf hghjgjhg', '1533104150_Lighthouse.jpg', '1533104150_semple1.docx');
+(5, 'Cintah tak kunjung kembali', 2014, 1, 2, 5, 'sdlkj alskdjsad aslkdj aslkdjasdasldkj asldjas lkdjsadkj asldkj aslkdj aslkdjaslkdjs sdlkj alskdjsad aslkdj aslkdjasdasldkj asldjas lkdjsadkj asldkj aslkdj aslkdjaslkdjssdlkj alskdjsad aslkdj aslkdjasdasldkj asldjas lkdjsadkj asldkj aslkdj aslkdjaslkdjssdlkj alskdjsad aslkdj aslkdjasdasldkj asldjas lkdjsadkj asldkj aslkdj aslkdjaslkdjssdlkj alskdjsad aslkdj aslkdjasdasldkj asldjas lkdjsadkj asldkj aslkdj aslkdjaslkdjssdlkj alskdjsad aslkdj aslkdjasdasldkj asldjas lkdjsadkj asldkj aslkdj aslkdjaslkdjssdlkj alskdjsad aslkdj aslkdjasdasldkj asldjas lkdjsadkj asldkj aslkdj aslkdjaslkdjssdlkj alskdjsad aslkdj aslkdjasdasldkj asldjas lkdjsadkj asldkj aslkdj aslkdjaslkdjs', '1533711386_Koala.jpg', '1533711386_semple1.docx');
 
 -- --------------------------------------------------------
 
@@ -93,7 +90,26 @@ INSERT INTO `kategori` (`id`, `nama`) VALUES
 (2, 'Pendidikan'),
 (3, 'Cerpen'),
 (4, 'Puisi'),
-(5, 'Novel');
+(5, 'Novel'),
+(6, 'Elektronik'),
+(7, 'Cergam'),
+(8, 'Komik'),
+(9, 'Ensiklopedi'),
+(10, 'Nomik'),
+(11, 'Antologi'),
+(12, 'Dongeng'),
+(13, 'Biografi'),
+(14, 'Jurnal'),
+(15, 'Novelet'),
+(16, 'Fotografi'),
+(17, 'Karya ilmiah'),
+(18, 'Tafsir'),
+(19, 'Kamus'),
+(20, 'Panduan'),
+(21, 'Atlas'),
+(22, 'Ilmiah'),
+(23, 'Teks'),
+(24, 'Mewarnai');
 
 -- --------------------------------------------------------
 
@@ -108,15 +124,6 @@ CREATE TABLE `peminjaman` (
   `tanggal_pinjam` date NOT NULL,
   `tanggal_kembali` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data untuk tabel `peminjaman`
---
-
-INSERT INTO `peminjaman` (`id`, `id_buku`, `id_anggota`, `tanggal_pinjam`, `tanggal_kembali`) VALUES
-(3, 3, 9, '2018-07-23', '2018-07-30'),
-(4, 2, 8, '2018-07-23', '2018-07-30'),
-(5, 3, 8, '2018-07-23', '2018-07-30');
 
 -- --------------------------------------------------------
 
@@ -304,13 +311,13 @@ ALTER TABLE `anggota`
 -- AUTO_INCREMENT for table `buku`
 --
 ALTER TABLE `buku`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `kategori`
 --
 ALTER TABLE `kategori`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `peminjaman`

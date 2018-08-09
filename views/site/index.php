@@ -1,10 +1,8 @@
 <?php
 
-use app\models\Buku;
-
 /* @var $this yii\web\View */
 
-$this->title = 'Perpustakaan';
+$this->title = 'Perpustakaan Yii2 GitLab';
 ?>
 <div class="site-index">
 

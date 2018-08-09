@@ -46,7 +46,7 @@ $this->params['breadcrumbs'][] = $this->title;
 <div>&nbsp;</div>
 
 <h1>Daftar Buku.</h1>
-<?= Html::a('Tambah Buku', ['buku/create', 'id_penulis' => $model->id], ['class' => 'btn btn-success']) ?>
+<?= Html::a('<i class="fa fa-plus"> Tambah Penulis</i>', ['buku/create', 'id_penulis' => $model->id], ['class' => 'btn btn-success']) ?>
 <div>&nbsp;</div>
 
 <table class="table">
@@ -62,8 +62,8 @@ $this->params['breadcrumbs'][] = $this->title;
         <td><?= $no++; ?></td>
         <td><?= Html::a($buku->nama, ['buku/view', 'id' => $buku->id]); ?></td>
         <td>
-            <?= Html::a("Edit",["buku/update","id"=>$buku->id],['class' => 'btn btn-primary']) ?>&nbsp;
-            <?= Html::a("Hapus",["buku/delete","id"=>$buku->id],['class' => 'btn btn-danger', 'data-method' => 'post', 'data-confirm' => 'Yakin hapus data ini?']) ?>&nbsp;
+            <?= Html::a("<i class='fa fa-pencil'> Edit</i>",["buku/update","id"=>$buku->id],['class' => 'btn btn-primary']) ?>&nbsp;
+            <?= Html::a("<i class='fa fa-trash'> Hapus</i>",["buku/delete","id"=>$buku->id],['class' => 'btn btn-danger', 'data-method' => 'post', 'data-confirm' => 'Yakin hapus data ini?']) ?>&nbsp;
         </td>
     </tr>
     <?php $no++; endforeach ?>

@@ -61,7 +61,6 @@ class Buku extends \yii\db\ActiveRecord
         ];
     }
 
-
     // Untuk mengambil id_penulis di tabel buku dirubah jadi nama penulis yang ada di tabel penulis yang akan di muncukan di index buku
     public function getPenulis()
     {

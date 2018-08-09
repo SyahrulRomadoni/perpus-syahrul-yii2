@@ -18,7 +18,6 @@ $this->params['breadcrumbs'][] = $this->title;
     <p>
         <?= Html::a('<i class="fa fa-plus"> Tambah Kategori</i>', ['create'], ['class' => 'btn btn-success']) ?>
         <?= Html::a('<i class="fa fa-print"> Export Daftar Kategori ke Word</i>', ['daftar-kategori'], ['class' => 'btn btn-info btn-flat']) ?>
-        <?= Html::a('<i class="fa fa-print"> Export Tes ke Word</i>', ['tes'], ['class' => 'btn btn-info btn-flat']) ?>
     </p>
 
     <?= GridView::widget([
@@ -35,6 +34,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     return $model->getJumlahBuku();
                 }
             ],
+
             ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>
