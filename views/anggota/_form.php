@@ -20,7 +20,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'email')->textInput(['maxlength' => 255]) ?>
 
-    <?= $form->field($model, 'status_aktif')->textInput() ?>
+    <?php /*<?= $form->field($model, 'status_aktif')->textInput() ?>*/ ?>
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>

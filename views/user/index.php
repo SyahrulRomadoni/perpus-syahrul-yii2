@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\UserSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Users';
+$this->title = 'User';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="user-index">
@@ -16,7 +16,8 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create User', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('<i class="fa fa-plus"> Tambah User</i>', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('<i class="fa fa-print"> Export Daftar User ke Word</i>', ['daftar-user'], ['class' => 'btn btn-info btn-flat']) ?>
     </p>
 
     <?= GridView::widget([
@@ -25,13 +26,20 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
+            //'id',
             'username',
-            'password',
-            'id_anggota',
-            'id_petugas',
+            //'password',
+            //'id_anggota',
+            //'id_petugas',
             //'id_user_role',
-            //'status',
+            [  
+                'attribute' => 'id_user_role',
+                'value' => function($data)
+                {
+                    return $data->getUserRole();
+                }
+            ],
+            'status',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

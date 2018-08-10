@@ -12,6 +12,7 @@ use app\models\Penulis;
 use app\models\Anggota;
 use app\models\Petugas;
 use app\models\User;
+use app\models\Peminjaman;
 
 $this->title = 'Perpustakaan Dashboard';
 $this->params['breadcrumbs'][] = $this->title;
@@ -22,7 +23,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <!-- ./col -->
     <div class="col-lg-3 col-xs-6">
         <!-- small box -->
-        <div class="small-box bg-green">
+        <div class="small-box bg-aqua">
             <div class="inner">
                 <p>Jumlah Anggota</p>
 
@@ -38,7 +39,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <!-- ./col -->
     <div class="col-lg-3 col-xs-6">
         <!-- small box -->
-        <div class="small-box bg-orange">
+        <div class="small-box bg-blue">
             <div class="inner">
                 <p>Jumlah Petugas</p>
 
@@ -54,7 +55,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <!-- ./col -->
     <div class="col-lg-3 col-xs-6">
         <!-- small box -->
-        <div class="small-box bg-white">
+        <div class="small-box bg-gray">
             <div class="inner">
                 <p>Jumlah User</p>
 
@@ -70,7 +71,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <!-- ./col -->
     <div class="col-lg-3 col-xs-6">
         <!-- small box -->
-        <div class="small-box bg-purple">
+        <div class="small-box bg-white">
             <div class="inner">
                 <p>Jumlah Penulis</p>
 
@@ -86,7 +87,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <!-- ./col -->
     <div class="col-lg-3 col-xs-6">
         <!-- small box -->
-        <div class="small-box bg-aqua">
+        <div class="small-box bg-green">
             <div class="inner">
                 <p>Jumlah Buku</p>
 
@@ -102,7 +103,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <!-- ./col -->
     <div class="col-lg-3 col-xs-6">
         <!-- small box -->
-        <div class="small-box bg-gray">
+        <div class="small-box bg-yellow">
             <div class="inner">
                 <p>Jumlah Kategori</p>
 
@@ -128,6 +129,22 @@ $this->params['breadcrumbs'][] = $this->title;
                 <i class="fa fa-building"></i>
             </div>
             <a href="<?=Url::to(['penerbit/index']);?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+        </div>
+    </div>
+
+    <!-- ./col -->
+    <div class="col-lg-3 col-xs-6">
+        <!-- small box -->
+        <div class="small-box bg-orange">
+            <div class="inner">
+                <p>Jumlah Peminjaman</p>
+
+                <h3><?= Yii::$app->formatter->asInteger(Peminjaman::getCount()); ?></h3>
+            </div>
+            <div class="icon">
+                <i class="fa fa-building"></i>
+            </div>
+            <a href="<?=Url::to(['peminjaman/index']);?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
         </div>
     </div>
 

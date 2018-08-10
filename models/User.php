@@ -49,7 +49,8 @@ class User extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
             'password' => 'Password',
             'id_anggota' => 'Id Anggota',
             'id_petugas' => 'Id Petugas',
-            'id_user_role' => 'Id User Role',
+            //'id_user_role' => 'Id User Role',
+            'id_user_role' => 'Status User',
             'status' => 'Status',
         ];
     }
@@ -95,5 +96,17 @@ class User extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
     public static function getCount()
     {
         return static::find()->count();
+    }
+
+    // Untuk mengambil nama = id_user_role yang di user maka id_user_role nama resebut akan di ambil di tabel user-role berdasarkan id_user_role 
+    public function getUserRole()
+    {
+        $model = UserRole::findOne($this->id_user_role);
+
+        if ($model !== null) {
+            return $model->nama;
+        } else {
+            return null;
+        }
     }
 }
