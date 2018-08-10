@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 08 Agu 2018 pada 09.33
+-- Generation Time: 10 Agu 2018 pada 12.22
 -- Versi Server: 10.1.28-MariaDB
 -- PHP Version: 7.1.10
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `perpustakaan2`
+-- Database: `perpustakaan`
 --
 
 -- --------------------------------------------------------
@@ -68,7 +68,12 @@ CREATE TABLE `buku` (
 --
 
 INSERT INTO `buku` (`id`, `nama`, `tahun_terbit`, `id_penulis`, `id_penerbit`, `id_kategori`, `sinopsis`, `sampul`, `berkas`) VALUES
-(5, 'Cintah tak kunjung kembali', 2014, 1, 2, 5, 'sdlkj alskdjsad aslkdj aslkdjasdasldkj asldjas lkdjsadkj asldkj aslkdj aslkdjaslkdjs sdlkj alskdjsad aslkdj aslkdjasdasldkj asldjas lkdjsadkj asldkj aslkdj aslkdjaslkdjssdlkj alskdjsad aslkdj aslkdjasdasldkj asldjas lkdjsadkj asldkj aslkdj aslkdjaslkdjssdlkj alskdjsad aslkdj aslkdjasdasldkj asldjas lkdjsadkj asldkj aslkdj aslkdjaslkdjssdlkj alskdjsad aslkdj aslkdjasdasldkj asldjas lkdjsadkj asldkj aslkdj aslkdjaslkdjssdlkj alskdjsad aslkdj aslkdjasdasldkj asldjas lkdjsadkj asldkj aslkdj aslkdjaslkdjssdlkj alskdjsad aslkdj aslkdjasdasldkj asldjas lkdjsadkj asldkj aslkdj aslkdjaslkdjssdlkj alskdjsad aslkdj aslkdjasdasldkj asldjas lkdjsadkj asldkj aslkdj aslkdjaslkdjs', '1533711386_Koala.jpg', '1533711386_semple1.docx');
+(6, 'Aku akan pulang', 2018, 1, 2, 5, '<p>asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad</p>', '1533866932_Koala.jpg', '1533866932_semple1.docx'),
+(7, 'Cintah tak kunjung kembali', 2017, 2, 1, 4, '<p>asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadadasdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadadasdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadadasdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadadasdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadadasdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad</p>', '1533866988_Penguins.jpg', '1533866988_semple2.docx'),
+(8, 'Bintak tak kunjung padam', 2016, 3, 2, 6, '<p>asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadadasdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadadasdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadadasdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadadasdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadadasdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadadasdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad</p>', '1533867045_Chrysanthemum.jpg', '1533867045_semple1.docx'),
+(9, 'Cintah tak kunjung datang', 2015, 1, 1, 3, '<p>asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadadasdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadadasdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadadasdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadadasdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad</p>', '1533867125_Hydrangeas.jpg', '1533867125_semple2.docx'),
+(10, 'Diam dan terdiam', 2014, 2, 2, 11, '<p>asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadadasdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadadasdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadadasdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadadasdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad</p>', '1533867200_Desert.jpg', '1533867200_semple1.docx'),
+(11, 'Entak ku harus bagaimana', 2013, 3, 1, 21, '<p>asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadadasdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadadasdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadadasdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad&nbsp;asdikd asldkajdasio asdda asdadad</p>', '1533867253_Lighthouse.jpg', '1533867253_semple2.docx');
 
 -- --------------------------------------------------------
 
@@ -311,7 +316,7 @@ ALTER TABLE `anggota`
 -- AUTO_INCREMENT for table `buku`
 --
 ALTER TABLE `buku`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `kategori`
@@ -323,7 +328,7 @@ ALTER TABLE `kategori`
 -- AUTO_INCREMENT for table `peminjaman`
 --
 ALTER TABLE `peminjaman`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `penerbit`
