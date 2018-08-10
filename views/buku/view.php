@@ -68,8 +68,30 @@ $this->params['breadcrumbs'][] = $this->title;
                 }
             ],
             'sinopsis:ntext',
-            'sampul',
-            'berkas',
+            //'sampul',
+            [
+                'attribute' => 'sampul',
+                'format' => 'raw',
+                'value' => function ($model) {
+                    if ($model->sampul != '') {
+                        return Html::img('@web/upload/' . $model->sampul, ['class' => 'img-responsive', 'style' => 'height:500px']);
+                    } else { 
+                        return '<div align="center"><h1>No Image</h1></div>';
+                    }
+                },
+            ],
+            //'berkas',
+            [
+                'attribute' => 'berkas',
+                'format' => 'raw',
+                'value' => function ($model) {
+                    if ($model->berkas != '') {
+                        return '<a href="' . Yii::$app->homeUrl . '/upload/' . $model->berkas . '"><div align="left"><button class="btn btn-primary glyphicon glyphicon-download-alt" type="submit"></button></div></a>';
+                    } else { 
+                        return '<div align="left"><h1>No File</h1></div>';
+                    }
+                },
+            ],
         ],
     ]) ?>
 
