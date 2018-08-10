@@ -11,12 +11,77 @@ use app\models\Penerbit;
 use app\models\Penulis;
 use app\models\Anggota;
 use app\models\Petugas;
+use app\models\User;
 
 $this->title = 'Perpustakaan Dashboard';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 
 <div class="row">
+
+    <!-- ./col -->
+    <div class="col-lg-3 col-xs-6">
+        <!-- small box -->
+        <div class="small-box bg-green">
+            <div class="inner">
+                <p>Jumlah Anggota</p>
+
+                <h3><?= Yii::$app->formatter->asInteger(Anggota::getCount()); ?></h3>
+            </div>
+            <div class="icon">
+                <i class="fa fa-user"></i>
+            </div>
+            <a href="<?=Url::to(['anggota/index']);?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+        </div>
+    </div>
+
+    <!-- ./col -->
+    <div class="col-lg-3 col-xs-6">
+        <!-- small box -->
+        <div class="small-box bg-orange">
+            <div class="inner">
+                <p>Jumlah Petugas</p>
+
+                <h3><?= Yii::$app->formatter->asInteger(Petugas::getCount()); ?></h3>
+            </div>
+            <div class="icon">
+                <i class="fa fa-users"></i>
+            </div>
+            <a href="<?=Url::to(['petugas/index']);?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+        </div>
+    </div>
+
+    <!-- ./col -->
+    <div class="col-lg-3 col-xs-6">
+        <!-- small box -->
+        <div class="small-box bg-white">
+            <div class="inner">
+                <p>Jumlah User</p>
+
+                <h3><?= Yii::$app->formatter->asInteger(User::getCount()); ?></h3>
+            </div>
+            <div class="icon">
+                <i class="fa fa-users"></i>
+            </div>
+            <a href="<?=Url::to(['user/index']);?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+        </div>
+    </div>
+
+    <!-- ./col -->
+    <div class="col-lg-3 col-xs-6">
+        <!-- small box -->
+        <div class="small-box bg-purple">
+            <div class="inner">
+                <p>Jumlah Penulis</p>
+
+                <h3><?= Yii::$app->formatter->asInteger(Penulis::getCount()); ?></h3>
+            </div>
+            <div class="icon">
+                <i class="fa fa-user"></i>
+            </div>
+            <a href="<?=Url::to(['penulis/index']);?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+        </div>
+    </div>
 
     <!-- ./col -->
     <div class="col-lg-3 col-xs-6">
@@ -63,54 +128,6 @@ $this->params['breadcrumbs'][] = $this->title;
                 <i class="fa fa-building"></i>
             </div>
             <a href="<?=Url::to(['penerbit/index']);?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-        </div>
-    </div>
-
-    <!-- ./col -->
-    <div class="col-lg-3 col-xs-6">
-        <!-- small box -->
-        <div class="small-box bg-purple">
-            <div class="inner">
-                <p>Jumlah Penulis</p>
-
-                <h3><?= Yii::$app->formatter->asInteger(Penulis::getCount()); ?></h3>
-            </div>
-            <div class="icon">
-                <i class="fa fa-user"></i>
-            </div>
-            <a href="<?=Url::to(['penulis/index']);?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-        </div>
-    </div>
-
-    <!-- ./col -->
-    <div class="col-lg-3 col-xs-6">
-        <!-- small box -->
-        <div class="small-box bg-green">
-            <div class="inner">
-                <p>Jumlah Anggota</p>
-
-                <h3><?= Yii::$app->formatter->asInteger(Anggota::getCount()); ?></h3>
-            </div>
-            <div class="icon">
-                <i class="fa fa-user"></i>
-            </div>
-            <a href="<?=Url::to(['anggota/index']);?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-        </div>
-    </div>
-
-    <!-- ./col -->
-    <div class="col-lg-3 col-xs-6">
-        <!-- small box -->
-        <div class="small-box bg-orange">
-            <div class="inner">
-                <p>Jumlah Petugas</p>
-
-                <h3><?= Yii::$app->formatter->asInteger(Petugas::getCount()); ?></h3>
-            </div>
-            <div class="icon">
-                <i class="fa fa-users"></i>
-            </div>
-            <a href="<?=Url::to(['petugas/index']);?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
         </div>
     </div>
 

@@ -50,6 +50,7 @@
                         'icon' => 'user',
                         'url' => '#',
                         'items' => [
+                            ['label' => 'User', 'icon' => 'user', 'url' => ['user/index'],],
                             ['label' => 'Anggota', 'icon' => 'user', 'url' => ['anggota/index'],],
                             ['label' => 'Petugas', 'icon' => 'users', 'url' => ['petugas/index'],],
                         ],
