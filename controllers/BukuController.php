@@ -75,7 +75,8 @@ class BukuController extends Controller
         $model->id_penulis = $id_penulis;
         $model->id_penerbit = $id_penerbit;
 
-        if ($model->load(Yii::$app->request->post()) && $model->validate()){
+        if ($model->load(Yii::$app->request->post()) && $model->validate())
+        {
             
             // ambil file berkas dan file sampul yg ada di _from.
             $sampul = UploadedFile::getInstance($model, 'sampul');
@@ -130,7 +131,8 @@ class BukuController extends Controller
         $sampul_lama = $model->sampul;
         $berkas_lama = $model->berkas;
 
-        if ($model->load(Yii::$app->request->post()) && $model->validate()){
+        if ($model->load(Yii::$app->request->post()) && $model->validate())
+        {
             
             // Mengambil data baru di layout _from
             $sampul = UploadedFile::getInstance($model, 'sampul');

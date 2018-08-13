@@ -56,14 +56,14 @@ class User extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
     }
 
     // Cunstom sendiri interface.
-    public static function FindIdentity($id)
+    public static function findIdentity($id)
     {
         return self::findOne($id);
     }
 
-    public static function FindIdentityByAccessToken($token, $type = null)
+    public static function findIdentityByAccessToken($token, $type = null)
     {
-        return static::FindOne(['access_token' => $token]);
+        return static::findOne(['access_token' => $token]);
     }
 
     public function getId()

@@ -63,7 +63,9 @@ class SiteController extends Controller
     {
         // Default Yii2
         //return $this->render('index');
-        if (!Yii::$app->user->isGuest) {
+
+        if (!Yii::$app->user->isGuest)
+        {
             return $this->redirect(['site/dashboard']);
         } else {
             return $this->redirect(['site/login']);
