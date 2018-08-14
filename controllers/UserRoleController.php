@@ -8,6 +8,8 @@ use app\models\UserRoleSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\widgets\ActiveForm;
+use yii\web\Response;
 
 /**
  * UserRoleController implements the CRUD actions for UserRole model.
@@ -66,6 +68,12 @@ class UserRoleController extends Controller
     {
         $model = new UserRole();
 
+        // Membuat validasi untuk di from tertentu yang sudah ada di databases tidak bisa dibuat kembali.
+        if (Yii::$app->request->isAjax && $model->load(Yii::$app->request->post())) {
+            Yii::$app->response->format = Response::FORMAT_JSON;
+            return ActiveForm::validate($model);
+        }
+
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         }
@@ -85,6 +93,12 @@ class UserRoleController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
+
+        // Membuat validasi untuk di from tertentu yang sudah ada di databases tidak bisa dibuat kembali.
+        if (Yii::$app->request->isAjax && $model->load(Yii::$app->request->post())) {
+            Yii::$app->response->format = Response::FORMAT_JSON;
+            return ActiveForm::validate($model);
+        }
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);

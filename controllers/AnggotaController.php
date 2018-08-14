@@ -11,6 +11,8 @@ use yii\filters\VerbFilter;
 use PhpOffice\PhpWord\IOFactory;
 use PhpOffice\PhpWord\PhpWord;
 use PhpOffice\PhpWord\Shared\Converter;
+use yii\widgets\ActiveForm;
+use yii\web\Response;
 
 /**
  * AnggotaController implements the CRUD actions for Anggota model.
@@ -69,6 +71,12 @@ class AnggotaController extends Controller
     {
         $model = new Anggota();
 
+        // Membuat validasi untuk di from tertentu yang sudah ada di databases tidak bisa dibuat kembali.
+        if (Yii::$app->request->isAjax && $model->load(Yii::$app->request->post())) {
+            Yii::$app->response->format = Response::FORMAT_JSON;
+            return ActiveForm::validate($model);
+        }
+
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         }
@@ -88,6 +96,12 @@ class AnggotaController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
+
+        // Membuat validasi untuk di from tertentu yang sudah ada di databases tidak bisa dibuat kembali.
+        if (Yii::$app->request->isAjax && $model->load(Yii::$app->request->post())) {
+            Yii::$app->response->format = Response::FORMAT_JSON;
+            return ActiveForm::validate($model);
+        }
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);

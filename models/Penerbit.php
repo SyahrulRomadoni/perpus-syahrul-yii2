@@ -31,7 +31,9 @@ class Penerbit extends \yii\db\ActiveRecord
         return [
             [['alamat'], 'string'],
             [['nama', 'telepon'], 'string', 'max' => 255],
+            [['telepon'],'match', 'pattern' => '/^[0-9-+]\w*$/i','message' => 'Enter Number Only'], // Untuk membuat validasi hanya angka / huruf yang bisa di masukan.
             [['email'], 'string', 'max' => 2555],
+            ['email', 'unique'], // Membuat nama menjadi uniq atau di buat satu kali buat validasi di from.
         ];
     }
 

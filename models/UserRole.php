@@ -28,6 +28,7 @@ class UserRole extends \yii\db\ActiveRecord
         return [
             [['nama'], 'required'],
             [['nama'], 'string', 'max' => 255],
+            ['nama', 'unique'], // Membuat nama menjadi uniq atau di buat satu kali buat validasi di from.
         ];
     }
 

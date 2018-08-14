@@ -10,13 +10,17 @@ use yii\widgets\ActiveForm;
 
 <div class="penulis-form">
 
-    <?php $form = ActiveForm::begin(); ?>
+    <?php $form = ActiveForm::begin([
+    	// Membuat validasi misal nama atau apa sudah ada.
+        //'id' => 'Kategori',
+        'enableAjaxValidation' => true,
+    ]); ?>
 
     <?= $form->field($model, 'nama')->textInput(['maxlength' => 255]) ?>
 
     <?= $form->field($model, 'alamat')->textarea(['rows' => 6]) ?>
 
-    <?= $form->field($model, 'telepon')->textInput(['maxlength' => 255]) ?>
+    <?= $form->field($model, 'telepon')->textInput(['maxlength' => 13]) ?>
 
     <?= $form->field($model, 'email')->textInput(['maxlength' => 255]) ?>
 

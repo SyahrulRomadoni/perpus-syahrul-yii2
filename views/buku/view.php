@@ -48,7 +48,11 @@ $this->params['breadcrumbs'][] = $this->title;
                 'attribute' => 'id_penulis',
                 'value' => function($data)
                 {
-                    return $data->getPenulis();
+                    // Cara pemanggilan 1 yang ada di model buku.
+                    //return $data->getPenulis();
+
+                    // Cara pemanggilan 2 yang ada di model buku.
+                    return $data->penulis->nama;
                 }
             ],
             // 'id_penerbit',
@@ -56,7 +60,11 @@ $this->params['breadcrumbs'][] = $this->title;
                 'attribute' => 'id_penerbit',
                 'value' => function($data)
                 {
-                    return $data->getPenerbit();
+                    // Cara pemanggilan 1 yang ada di model buku.
+                    //return $data->getPenerbit();
+
+                    // Cara pemanggilan 2 yang ada di model buku.
+                    return $data->penerbit->nama;
                 }
             ],
             // 'id_kategori',
@@ -64,7 +72,11 @@ $this->params['breadcrumbs'][] = $this->title;
                 'attribute' => 'id_kategori',
                 'value' => function($data)
                 {
-                    return $data->getKategori();
+                    // Cara pemanggilan 1 yang ada di model buku.
+                    //return $data->getKategori();
+
+                    // Cara pemanggilan 2 yang ada di model buku.
+                    return $data->kategori->nama;
                 }
             ],
             'sinopsis:ntext',

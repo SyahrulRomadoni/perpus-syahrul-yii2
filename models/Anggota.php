@@ -34,6 +34,7 @@ class Anggota extends \yii\db\ActiveRecord
             [['status_aktif'], 'integer'],
             [['nama', 'alamat'], 'string', 'max' => 255],
             [['telepon', 'email'], 'string', 'max' => 50],
+            ['email', 'unique'], // Membuat nama menjadi uniq atau di buat satu kali buat validasi di from.
         ];
     }
 

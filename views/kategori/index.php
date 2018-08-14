@@ -18,8 +18,6 @@ $this->params['breadcrumbs'][] = $this->title;
     <p>
         <?= Html::a('<i class="fa fa-plus"> Tambah Kategori</i>', ['create'], ['class' => 'btn btn-success']) ?>
         <?= Html::a('<i class="fa fa-print"> Export Daftar Kategori ke Word</i>', ['daftar-kategori'], ['class' => 'btn btn-info btn-flat']) ?>
-        <?= Html::a('<i class="fa fa-print"> Test ke Word</i>', ['test-word'], ['class' => 'btn btn-info btn-flat']) ?>
-        <?= Html::a('<i class="fa fa-print"> Test ke Excel</i>', ['test-excel'], ['class' => 'btn btn-info btn-flat']) ?>
     </p>
 
     <?= GridView::widget([

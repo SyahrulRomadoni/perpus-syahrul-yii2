@@ -71,6 +71,7 @@
                     ['label' => 'Lain-lain', 'options' => ['class' => 'header']],
                     ['label' => 'Kontak', 'icon' => 'tty', 'url' => ['site/contact'],],
                     ['label' => 'Tentang', 'icon' => 'font', 'url' => ['site/about'],],
+                    ['label' => 'Testing', 'icon' => 'file-word-o', 'url' => ['site/testing'],],
                     /*[
                         'label' => 'Some tools',
                         'icon' => 'share',

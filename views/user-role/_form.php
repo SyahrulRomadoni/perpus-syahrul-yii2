@@ -10,7 +10,11 @@ use yii\widgets\ActiveForm;
 
 <div class="user-role-form">
 
-    <?php $form = ActiveForm::begin(); ?>
+    <?php $form = ActiveForm::begin([
+    	// Membuat validasi misal nama atau apa sudah ada.
+        //'id' => 'Kategori',
+        'enableAjaxValidation' => true,
+    ]); ?>
 
     <?= $form->field($model, 'nama')->textInput(['maxlength' => true]) ?>
 
