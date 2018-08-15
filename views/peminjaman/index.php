@@ -25,9 +25,31 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
-            'id_buku',
-            'id_anggota',
+            //'id',
+            //'id_buku',
+            [  
+                'attribute' => 'id_buku',
+                'value' => function($data)
+                {
+                    // Cara 1 Pemanggil id_*** menjadi nama.
+                    //return $data->getPenulis();
+
+                    // Cara 2 Pemanggil id_*** menjadi nama.
+                    return $data->buku->nama;
+                }
+            ],
+            //'id_anggota',
+            [  
+                'attribute' => 'id_anggota',
+                'value' => function($data)
+                {
+                    // Cara 1 Pemanggil id_*** menjadi nama.
+                    //return $data->getPenulis();
+
+                    // Cara 2 Pemanggil id_*** menjadi nama.
+                    return $data->anggota->nama;
+                }
+            ],
             'tanggal_pinjam',
             'tanggal_kembali',
 

@@ -591,13 +591,23 @@ class SiteController extends Controller
     }
 
     // Test Excel
-    public function actionTestExcel()
+    public function actionTestExcelS()
     {
         $spreadsheet = new Spreadsheet();
         $sheet = $spreadsheet->getActiveSheet();
-        $sheet->setCellValue('A1', 'Hello World !');
 
-        $writer = new Xlsx($spreadsheet);
-        $writer->save('hello world.xlsx');
+        // Mulai
+        $sheet->setCellValue('A1', 'Nama :');
+        $sheet->setCellValue('B1', 'Syahrul Romadoni');
+        $sheet->setCellValue('A2', 'Hobi :');
+        $sheet->setCellValue('B2', 'Ngoding');
+
+        // Tempat penyimpanan file sama nama file.
+        $filename = time() . '_' . 'Test-Excel-S.xlsx';
+        $path     = 'document/' . $filename;
+        $writer   = new Xlsx($spreadsheet);
+        $writer->save($path);
+
+        return $this->redirect($path);
     }
 }
