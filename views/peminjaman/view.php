@@ -6,7 +6,7 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model app\models\Peminjaman */
 
-$this->title = $model->id;
+$this->title = $model->buku->nama;
 $this->params['breadcrumbs'][] = ['label' => 'Peminjamen', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -28,9 +28,31 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'id',
-            'id_buku',
-            'id_anggota',
+            //'id',
+            //'id_buku',
+            [  
+                'attribute' => 'id_buku',
+                'value' => function($data)
+                {
+                    // Cara 1 Pemanggil id_*** menjadi nama.
+                    //return $data->getPenulis();
+
+                    // Cara 2 Pemanggil id_*** menjadi nama.
+                    return $data->buku->nama;
+                }
+            ],
+            //'id_anggota',
+            [  
+                'attribute' => 'id_anggota',
+                'value' => function($data)
+                {
+                    // Cara 1 Pemanggil id_*** menjadi nama.
+                    //return $data->getPenulis();
+
+                    // Cara 2 Pemanggil id_*** menjadi nama.
+                    return $data->anggota->nama;
+                }
+            ],
             'tanggal_pinjam',
             'tanggal_kembali',
         ],
