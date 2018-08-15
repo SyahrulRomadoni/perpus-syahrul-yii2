@@ -342,9 +342,9 @@ class BukuController extends Controller
             $table->addCell(500)->addText($nomor++, null, $paragraphCenter);
             $table->addCell(5000)->addText($buku->nama, null);
             $table->addCell(5000)->addText($buku->tahun_terbit, null, $paragraphCenter);
-            $table->addCell(5000)->addText($buku->getPenulis(), null, $paragraphCenter);
-            $table->addCell(5000)->addText($buku->getPenerbit(), null, $paragraphCenter);
-            $table->addCell(5000)->addText($buku->getKategori(), null, $paragraphCenter);
+            $table->addCell(5000)->addText($buku->penulis->nama, null, $paragraphCenter);
+            $table->addCell(5000)->addText($buku->penerbit->nama, null, $paragraphCenter);
+            $table->addCell(5000)->addText($buku->kategori->nama, null, $paragraphCenter);
         }
 
         // Tempat penyimpanan file sama nama file.
