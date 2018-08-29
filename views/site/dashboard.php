@@ -248,6 +248,8 @@ $this->params['breadcrumbs'][] = $this->title;
 
 <!-- Dashboard Anggota -->
 <?php if (Yii::$app->user->identity->id_user_role == 2): ?>
+<?php $this->title = 'Perpustakaan'; ?>
+
 <div class="row">
 
     <?php foreach (Buku::find()->all() as $buku) {?> 
@@ -272,7 +274,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
                 <div class="box-body">
                     <img class="img-responsive pad" src="<?= Yii::$app->request->baseUrl.'/upload/'.$buku['sampul']; ?>" alt="Photo">
-                    <p>Sinopsis : <?= $buku->sinopsis ?></p>
+                    <p>Sinopsis : <?= substr($buku->sinopsis,0,120);?> ...</p>
                     <button type="button" class="btn btn-default btn-xs"><i class="fa fa-eye"></i> Detail</button>
                     <button type="button" class="btn btn-default btn-xs"><i class="fa fa-file"></i> Pinjam</button>
                     <!-- <span class="pull-right text-muted">127 Peminjam - 3 Komentar</span> -->
