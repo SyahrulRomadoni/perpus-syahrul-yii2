@@ -142,7 +142,7 @@ class AnggotaController extends Controller
         throw new NotFoundHttpException('The requested page does not exist.');
     }
 
-    public function actionDaftarAnggota()
+    public function actionDaftarAnggotaWord()
     {
         // Membuat model baru
         $phpWord = new PhpWord();

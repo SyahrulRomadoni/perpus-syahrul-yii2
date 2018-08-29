@@ -142,7 +142,7 @@ class KategoriController extends Controller
         throw new NotFoundHttpException('The requested page does not exist.');
     }
 
-    public function actionDaftarKategori()
+    public function actionDaftarKategoriWord()
     {
         // Membuat model baru
         $phpWord = new PhpWord();

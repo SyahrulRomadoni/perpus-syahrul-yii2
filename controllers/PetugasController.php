@@ -142,7 +142,7 @@ class PetugasController extends Controller
         throw new NotFoundHttpException('The requested page does not exist.');
     }
 
-    public function actionDaftarPetugas()
+    public function actionDaftarPetugasWord()
     {
         // Membuat model baru
         $phpWord = new PhpWord();

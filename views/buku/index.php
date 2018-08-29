@@ -2,6 +2,10 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
+use app\models\Penulis;
+use app\models\Kategori;
+use app\models\Buku;
+use app\models\Penerbit;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\BukuSearch */
@@ -17,7 +21,9 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <p>
         <?= Html::a('<i class="fa fa-plus"> Tambah Buku</i>', ['create'], ['class' => 'btn btn-success']) ?>
-        <?= Html::a('<i class="fa fa-print"> Export Daftar Buku ke Word</i>', ['daftar-buku'], ['class' => 'btn btn-info btn-flat']) ?>
+        <?= Html::a('<i class="fa fa-print"> Export Daftar Buku ke Word</i>', ['daftar-buku-word'], ['class' => 'btn btn-info btn-flat']) ?>
+        <?= Html::a('<i class="fa fa-print"> Export Daftar Buku ke Pdf</i>', ['daftar-buku-pdf'], ['class' => 'btn btn-danger btn-flat']) ?>
+        <?= Html::a('<i class="fa fa-print"> Export Daftar Buku ke Pdf</i>', ['daftar-buku-excel'], ['class' => 'btn btn-warning btn-flat']) ?>
     </p>
 
     <?= GridView::widget([

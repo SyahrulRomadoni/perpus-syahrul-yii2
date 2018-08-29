@@ -142,7 +142,7 @@ class PenerbitController extends Controller
         throw new NotFoundHttpException('The requested page does not exist.');
     }
 
-    public function actionDaftarPenerbit()
+    public function actionDaftarPenerbitWord()
     {
         // Membuat model baru
         $phpWord = new PhpWord();

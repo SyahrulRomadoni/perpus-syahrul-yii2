@@ -250,38 +250,42 @@ $this->params['breadcrumbs'][] = $this->title;
 <?php if (Yii::$app->user->identity->id_user_role == 2): ?>
 <div class="row">
 
-    <!-- Kolom box mulai -->
-    <div class="col-md-4">
+    <?php foreach (Buku::find()->all() as $buku) {?> 
+        <!-- Kolom box mulai -->
+        <div class="col-md-4">
 
-        <!-- Box mulai -->
-        <div class="box box-widget">
+            <!-- Box mulai -->
+            <div class="box box-widget">
 
-            <div class="box-header with-border">
-                <div class="user-block">
-                    <img class="img-circle" src="<?= Yii::getAlias('@web').'/images/P2.jpg'; ?>" alt="User Image">
-                    <span class="username"><a href="#">Jonathan Burke Jr.</a></span>
-                    <span class="description">Shared publicly - 7:30 PM Today</span>
+                <div class="box-header with-border">
+                    <div class="user-block">
+                        <img class="img-circle" src="<?= Yii::getAlias('@web').'/images/P2.jpg'; ?>" alt="User Image">
+                        <span class="username"><a href="#"><?= $buku->nama ?></a></span>
+                        <span class="description"> Di Terbitkan : Tahun <?= $buku->tahun_terbit; ?></span>
+                    </div>
+                    <div class="box-tools">
+                        <button type="button" class="btn btn-box-tool" data-toggle="tooltip" title="Mark as read"><i class="fa fa-circle-o"></i></button>
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                    </div>
                 </div>
-                <div class="box-tools">
-                    <button type="button" class="btn btn-box-tool" data-toggle="tooltip" title="Mark as read"><i class="fa fa-circle-o"></i></button>
-                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
-                    <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-                </div>
-            </div>
 
-            <div class="box-body">
-                <img class="img-responsive pad" src="<?= Yii::getAlias('@web').'/images/P2.jpg'; ?>" alt="Photo">
-                <p>I took this photo this morning. What do you guys think?</p>
-                <button type="button" class="btn btn-default btn-xs"><i class="fa fa-eye"></i> Detail</button>
-                <button type="button" class="btn btn-default btn-xs"><i class="fa fa-file"></i> Pinjam</button>
-                <span class="pull-right text-muted">127 Peminjam - 3 Komentar</span>
+                <div class="box-body">
+                    <img class="img-responsive pad" src="<?= Yii::$app->request->baseUrl.'/upload/'.$buku['sampul']; ?>" alt="Photo">
+                    <p>Sinopsis : <?= $buku->sinopsis ?></p>
+                    <button type="button" class="btn btn-default btn-xs"><i class="fa fa-eye"></i> Detail</button>
+                    <button type="button" class="btn btn-default btn-xs"><i class="fa fa-file"></i> Pinjam</button>
+                    <!-- <span class="pull-right text-muted">127 Peminjam - 3 Komentar</span> -->
+                </div>
+
             </div>
+            <!-- Box selesai -->
 
         </div>
-        <!-- Box selesai -->
-
-    </div>
-    <!-- Kolom box selesai -->
+        <!-- Kolom box selesai -->  
+    <?php
+        }
+    ?>
 
 </div>
 <?php endif ?>

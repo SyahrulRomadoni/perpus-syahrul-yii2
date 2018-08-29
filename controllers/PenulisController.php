@@ -142,7 +142,7 @@ class PenulisController extends Controller
         throw new NotFoundHttpException('The requested page does not exist.');
     }
 
-    public function actionDaftarPenulis()
+    public function actionDaftarPenulisWord()
     {
         // Membuat model baru
         $phpWord = new PhpWord();

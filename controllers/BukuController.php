@@ -12,6 +12,7 @@ use yii\web\UploadedFile;
 use PhpOffice\PhpWord\IOFactory;
 use PhpOffice\PhpWord\PhpWord;
 use PhpOffice\PhpWord\Shared\Converter;
+use Mpdf\Mpdf;
 
 /**
  * BukuController implements the CRUD actions for Buku model.
@@ -223,7 +224,7 @@ class BukuController extends Controller
         throw new NotFoundHttpException('The requested page does not exist.');
     }
 
-    public function actionDaftarBuku()
+    public function actionDaftarBukuWord()
     {
         // Membuat model baru
         $phpWord = new PhpWord();
@@ -354,5 +355,20 @@ class BukuController extends Controller
         $xmlWrite->save($path);
 
         return $this->redirect($path);
+    }
+
+    public function actionDaftarBukuPdf() 
+    {
+        $this->layout='mainbukupdf';
+        $model = Buku::find()->All();
+        $mpdf  = new mPDF();
+        $mpdf->WriteHTML($this->renderPartial('@app/views/site/templatebukupdf',['model'=>$model]));
+        $mpdf->Output(time() . '_' . 'Data-Buku.pdf', 'D');
+        exit;
+    }
+
+    public function actionDaftarBukuExcel($value='')
+    {
+        #
     }
 }
