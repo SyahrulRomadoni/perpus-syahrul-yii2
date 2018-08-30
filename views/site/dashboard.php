@@ -262,7 +262,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 <div class="box-header with-border">
                     <div class="user-block">
                         <img class="img-circle" src="<?= Yii::getAlias('@web').'/images/P2.jpg'; ?>" alt="User Image">
-                        <span class="username"><a href="#"><?= $buku->nama ?></a></span>
+                        <span class="username"><?= Html::a($buku->nama, ['buku/view', 'id' => $buku->id]); ?></span>
                         <span class="description"> Di Terbitkan : Tahun <?= $buku->tahun_terbit; ?></span>
                     </div>
                     <div class="box-tools">
@@ -275,8 +275,14 @@ $this->params['breadcrumbs'][] = $this->title;
                 <div class="box-body">
                     <img class="img-responsive pad" src="<?= Yii::$app->request->baseUrl.'/upload/'.$buku['sampul']; ?>" alt="Photo">
                     <p>Sinopsis : <?= substr($buku->sinopsis,0,120);?> ...</p>
-                    <button type="button" class="btn btn-default btn-xs"><i class="fa fa-eye"></i> Detail</button>
-                    <button type="button" class="btn btn-default btn-xs"><i class="fa fa-file"></i> Pinjam</button>
+                    <?= Html::a("<i class='fa fa-eye'> Detail Buku</i>",["buku/view","id"=>$buku->id],['class' => 'btn btn-default']) ?>
+                    <?= Html::a('<i class="fa fa-file"> Pinjam Buku</i>', ['#', 'id' => $buku->id], [
+                        'class' => 'btn btn-primary',
+                        'data' => [
+                            'confirm' => 'Apa anda yakin ingin meminjam buku ini?',
+                            'method' => 'post',
+                        ],
+                    ]) ?>
                     <!-- <span class="pull-right text-muted">127 Peminjam - 3 Komentar</span> -->
                 </div>
 
