@@ -10,35 +10,44 @@ use yii\grid\GridView;
 $this->title = 'Penulis';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="penulis-index">
+<div class="penulis-index box box-primary">
 
-    <h1><?= Html::encode($this->title) ?></h1>
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+    <div class="box-header">
+        <h3 class="box-title">Daftar Penerbit.</h3>
+    </div>
 
-    <p>
-        <?= Html::a('<i class="fa fa-plus"> Tambah Penulis</i>', ['create'], ['class' => 'btn btn-success']) ?>
-        <?= Html::a('<i class="fa fa-print"> Export Daftar Penulis ke Word</i>', ['daftar-penulis-word'], ['class' => 'btn btn-info btn-flat']) ?>
-    </p>
+    <div class="box-body">
 
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
-        'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
+        <?php /*<h1><?= Html::encode($this->title) ?></h1>*/ ?>
+        <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
-            //'id',
-            'nama',
-            'alamat:ntext',
-            'telepon',
-            'email:email',
-            [
-                'header' => 'Jumlah Buku',
-                'value' => function($model) {
-                    return $model->getJumlahBuku();
-                }
+        <p>
+            <?= Html::a('<i class="fa fa-plus"> Tambah Penulis</i>', ['create'], ['class' => 'btn btn-success']) ?>
+            <?= Html::a('<i class="fa fa-print"> Export Daftar Penulis ke Word</i>', ['daftar-penulis-word'], ['class' => 'btn btn-info btn-flat']) ?>
+        </p>
+
+        <?= GridView::widget([
+            'dataProvider' => $dataProvider,
+            'filterModel' => $searchModel,
+            'columns' => [
+                ['class' => 'yii\grid\SerialColumn'],
+
+                //'id',
+                'nama',
+                'alamat:ntext',
+                'telepon',
+                'email:email',
+                [
+                    'header' => 'Jumlah Buku',
+                    'value' => function($model) {
+                        return $model->getJumlahBuku();
+                    }
+                ],
+
+                ['class' => 'yii\grid\ActionColumn'],
             ],
+        ]); ?>
 
-            ['class' => 'yii\grid\ActionColumn'],
-        ],
-    ]); ?>
+    </div>
+
 </div>

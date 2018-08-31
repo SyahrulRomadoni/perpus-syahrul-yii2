@@ -10,25 +10,34 @@ use yii\grid\GridView;
 $this->title = 'Kategori User';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="user-role-index">
+<div class="user-role-index box box-primary">
 
-    <h1><?= Html::encode($this->title) ?></h1>
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+    <div class="box-header">
+        <h3 class="box-title">Daftar Kategori User.</h3>
+    </div>
 
-    <p>
-        <?= Html::a('<i class="fa fa-plus"> Tambah Kategori User</i>', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
+    <div class="box-body">
 
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
-        'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
+        <?php /*<h1><?= Html::encode($this->title) ?></h1>*/ ?>
+        <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
-            //'id',
-            'nama',
+        <p>
+            <?= Html::a('<i class="fa fa-plus"> Tambah Kategori User</i>', ['create'], ['class' => 'btn btn-success']) ?>
+        </p>
 
-            ['class' => 'yii\grid\ActionColumn'],
-        ],
-    ]); ?>
+        <?= GridView::widget([
+            'dataProvider' => $dataProvider,
+            'filterModel' => $searchModel,
+            'columns' => [
+                ['class' => 'yii\grid\SerialColumn'],
+
+                //'id',
+                'nama',
+
+                ['class' => 'yii\grid\ActionColumn'],
+            ],
+        ]); ?>
+        
+    </div>
+
 </div>

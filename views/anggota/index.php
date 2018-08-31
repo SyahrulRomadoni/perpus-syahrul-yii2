@@ -10,30 +10,39 @@ use yii\grid\GridView;
 $this->title = 'Anggota';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="anggota-index">
+<div class="anggota-index box box-primary">
 
-    <h1><?= Html::encode($this->title) ?></h1>
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+    <div class="box-header">
+        <h3 class="box-title">Daftar Anggota.</h3>
+    </div>
 
-    <p>
-        <?= Html::a('<i class="fa fa-plus"> Tambah Anggota</i>', ['create'], ['class' => 'btn btn-success']) ?>
-        <?= Html::a('<i class="fa fa-print"> Export Daftar Anggota ke Word</i>', ['daftar-anggota-word'], ['class' => 'btn btn-info btn-flat']) ?>
-    </p>
+    <div class="box-body">
 
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
-        'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
+        <?php /*<h1><?= Html::encode($this->title) ?></h1>*/ ?>
+        <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
-            //'id',
-            'nama',
-            'alamat',
-            'telepon',
-            'email:email',
-            //'status_aktif',
+        <p>
+            <?= Html::a('<i class="fa fa-plus"> Tambah Anggota</i>', ['create'], ['class' => 'btn btn-success']) ?>
+            <?= Html::a('<i class="fa fa-print"> Export Daftar Anggota ke Word</i>', ['daftar-anggota-word'], ['class' => 'btn btn-info btn-flat']) ?>
+        </p>
 
-            ['class' => 'yii\grid\ActionColumn'],
-        ],
-    ]); ?>
+        <?= GridView::widget([
+            'dataProvider' => $dataProvider,
+            'filterModel' => $searchModel,
+            'columns' => [
+                ['class' => 'yii\grid\SerialColumn'],
+
+                //'id',
+                'nama',
+                'alamat',
+                'telepon',
+                'email:email',
+                //'status_aktif',
+
+                ['class' => 'yii\grid\ActionColumn'],
+            ],
+        ]); ?>
+        
+    </div>
+
 </div>
