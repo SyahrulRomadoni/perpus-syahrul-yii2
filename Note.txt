@@ -1,0 +1,5 @@
+- membuat paggination di view home anggota.
+- membuat block url user anggota rbac
+- export excel
+- update password security masi blm
+- menghilang kan nama admin di view user index
