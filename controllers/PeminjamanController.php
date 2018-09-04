@@ -62,9 +62,20 @@ class PeminjamanController extends Controller
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
-    public function actionCreate()
+    public function actionCreate($id_buku = null)
     {
         $model = new Peminjaman();
+        $model->id_buku = $id_buku;
+
+        // Jika anggota meminjam buku maka auto crud
+        if (Yii::$app->user->identity->id_user_role == 2) {
+            $model->id_anggota = Yii::$app->user->identity->id_anggota;
+            $model->tanggal_pinjam = date('Y-m-d');
+            $model->tanggal_kembali = date('Y-m-d', strtotime('+7 days'));
+
+            $model->save();
+            return $this->redirect(['index']); 
+        }
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 15 Agu 2018 pada 17.57
+-- Generation Time: 04 Sep 2018 pada 13.18
 -- Versi Server: 10.1.28-MariaDB
 -- PHP Version: 7.1.10
 
@@ -133,7 +133,12 @@ CREATE TABLE `peminjaman` (
 --
 
 INSERT INTO `peminjaman` (`id`, `id_buku`, `id_anggota`, `tanggal_pinjam`, `tanggal_kembali`) VALUES
-(1, 12, 8, '2017-05-05', '2017-05-12');
+(1, 12, 8, '2017-05-05', '2017-05-12'),
+(2, 14, 8, '2018-09-04', '2018-09-11'),
+(3, 13, 8, '2018-09-04', '2018-09-11'),
+(4, 15, 9, '2018-09-04', '2018-09-11'),
+(5, 13, 9, '2018-09-04', '2018-09-11'),
+(6, 14, 9, '2018-09-04', '2018-09-11');
 
 -- --------------------------------------------------------
 
@@ -223,11 +228,11 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `username`, `password`, `id_anggota`, `id_petugas`, `id_user_role`, `status`) VALUES
-(1, 'Admin', 'Admin', 0, 0, 1, 1),
-(14, 'anggota1', 'anggota1', 8, 0, 2, 2),
-(15, 'anggota2', 'anggota2', 9, 0, 2, 2),
-(16, 'petugas1', 'petugas1', 0, 4, 3, 3),
-(17, 'petugas2', 'petugas2', 0, 5, 3, 3);
+(1, 'admin', '$2y$13$B1llpI7dSPlvN6Vv/.', 0, 0, 1, 1),
+(14, 'anggota1', '$2y$13$dGc9QMqWXWnMuy9Y2N', 8, 0, 2, 2),
+(15, 'anggota2', '$2y$13$EuPTVUXhPvnBr69sMk', 9, 0, 2, 2),
+(16, 'petugas1', '$2y$13$DG5NE9Ky/3cI.C.inc', 0, 4, 3, 3),
+(17, 'petugas2', '$2y$13$2mMgkAroGeEcoQfb6W', 0, 5, 3, 3);
 
 -- --------------------------------------------------------
 
@@ -333,7 +338,7 @@ ALTER TABLE `kategori`
 -- AUTO_INCREMENT for table `peminjaman`
 --
 ALTER TABLE `peminjaman`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `penerbit`

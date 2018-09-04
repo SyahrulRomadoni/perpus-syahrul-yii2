@@ -152,6 +152,14 @@ class SiteController extends Controller
         return $this->render('testing');
     }
 
+    // Contoh testing password hash
+    /*public function actionGenerate()
+    {
+        return Yii::$app->getSecurity()->generatePasswordHash('petugas2');
+    }*/
+
+
+
     // Test Word
     public function actionTestWordS() {
 

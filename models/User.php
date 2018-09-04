@@ -109,4 +109,14 @@ class User extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
             return null;
         }
     }
+
+    // Before security password / proses memasukan data security.
+    public function beforeSave($insert)
+    {
+        if ($insert) {
+            $this->password = Yii::$app->getSecurity()->generatePasswordHash($this->password);
+        }
+        return true;
+    }
+
 }

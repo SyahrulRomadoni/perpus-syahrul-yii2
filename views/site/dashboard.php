@@ -276,11 +276,9 @@ $this->params['breadcrumbs'][] = $this->title;
                     <img class="img-responsive pad" src="<?= Yii::$app->request->baseUrl.'/upload/'.$buku['sampul']; ?>" alt="Photo">
                     <p>Sinopsis : <?= substr($buku->sinopsis,0,120);?> ...</p>
                     <?= Html::a("<i class='fa fa-eye'> Detail Buku</i>",["buku/view","id"=>$buku->id],['class' => 'btn btn-default']) ?>
-                    <?= Html::a('<i class="fa fa-file"> Pinjam Buku</i>', ['#', 'id' => $buku->id], [
-                        'class' => 'btn btn-primary',
+                    <?= Html::a('<i class="fa fa-file"> Pinjam Buku</i>', ['peminjaman/create', 'id_buku' => $buku->id], ['class' => 'btn btn-primary',
                         'data' => [
                             'confirm' => 'Apa anda yakin ingin meminjam buku ini?',
-                            'method' => 'post',
                         ],
                     ]) ?>
                     <!-- <span class="pull-right text-muted">127 Peminjam - 3 Komentar</span> -->
