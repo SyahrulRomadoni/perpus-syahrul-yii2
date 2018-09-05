@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 04 Sep 2018 pada 13.18
+-- Generation Time: 05 Sep 2018 pada 13.05
 -- Versi Server: 10.1.28-MariaDB
 -- PHP Version: 7.1.10
 
@@ -216,7 +216,7 @@ INSERT INTO `petugas` (`id`, `nama`, `alamat`, `telepon`, `email`) VALUES
 CREATE TABLE `user` (
   `id` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
-  `password` varchar(25) NOT NULL,
+  `password` varchar(255) NOT NULL,
   `id_anggota` int(11) DEFAULT NULL,
   `id_petugas` int(11) DEFAULT NULL,
   `id_user_role` int(11) DEFAULT NULL,
@@ -228,11 +228,11 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `username`, `password`, `id_anggota`, `id_petugas`, `id_user_role`, `status`) VALUES
-(1, 'admin', '$2y$13$B1llpI7dSPlvN6Vv/.', 0, 0, 1, 1),
-(14, 'anggota1', '$2y$13$dGc9QMqWXWnMuy9Y2N', 8, 0, 2, 2),
-(15, 'anggota2', '$2y$13$EuPTVUXhPvnBr69sMk', 9, 0, 2, 2),
-(16, 'petugas1', '$2y$13$DG5NE9Ky/3cI.C.inc', 0, 4, 3, 3),
-(17, 'petugas2', '$2y$13$2mMgkAroGeEcoQfb6W', 0, 5, 3, 3);
+(1, 'admin', '$2y$13$VSqn1u0bIsYZVs2ZX4zlt.di0iyBOzPb329TBk/0QgE2GuRhH0RPy', 0, 0, 1, 1),
+(14, 'anggota1', '$2y$13$QCunQZveRL7jXZgLjKId7O6cziOz9IlS11QrtdFB9Syl2auQOVhYi', 8, 0, 2, 2),
+(15, 'anggota2', '$2y$13$BlhS9K9OmSYoD5BNV2HczuW320lOgglEPu6tVhQ9PnjT7ozQ5rWPy', 9, 0, 2, 2),
+(16, 'petugas1', '$2y$13$BEwoGYyROe2iNiOFdbzo9ODbkcEYEvMCZlX4XtBEF/PSfd6tN2Ffq', 0, 4, 3, 3),
+(17, 'petugas2', '$2y$13$WSHxM9zUDfQCCNtSugO7Yu6Pu7kboic4AOvckpnVUFIKZ3jurNWNe', 0, 5, 3, 3);
 
 -- --------------------------------------------------------
 
