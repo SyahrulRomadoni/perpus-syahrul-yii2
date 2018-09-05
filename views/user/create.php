@@ -10,12 +10,20 @@ $this->title = 'Tambah User';
 $this->params['breadcrumbs'][] = ['label' => 'Users', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="user-create">
+<div class="user-create box box-primary">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+	<div class="box-header">
+        <h3 class="box-title">Tambah User.</h3>
+    </div>
 
-    <?= $this->render('_form', [
-        'model' => $model,
-    ]) ?>
+    <div class="box-body">
+
+	    <?php /*<h1><?= Html::encode($this->title) ?></h1>*/ ?>
+
+	    <?= $this->render('_form', [
+	        'model' => $model,
+	    ]) ?>
+
+	</div>
 
 </div>

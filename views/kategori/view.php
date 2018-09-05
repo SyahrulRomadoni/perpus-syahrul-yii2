@@ -12,11 +12,11 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="kategori-view box box-primary">
 
-    <div class="box-body">
+    <div class="box-header">
+        <h3 class="box-title">Detail Kategori : <?= $model->nama; ?>.</h3>
+    </div>
 
-        <div class="box-header">
-            <h3 class="box-title">Detail Kategori : <?= $model->nama; ?>.</h3>
-        </div>
+    <div class="box-body">
 
         <?php /*<h1><?= Html::encode($this->title) ?></h1>*/ ?>
 

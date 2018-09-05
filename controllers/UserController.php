@@ -128,6 +128,18 @@ class UserController extends Controller
         throw new NotFoundHttpException('The requested page does not exist.');
     }
 
+    // Resert password anggota yang bisa di pakai oleh admin dan petugas.
+    public function actionResetPassword($id)
+    {
+        $user = User::findOne($id);
+            
+        $user->password = Yii::$app->getSecurity()->generatePasswordHash($user->username);
+        $user->save(false);
+
+        Yii::$app->session->setFlash('Berhasil', 'Password sudah berhasil di reset');
+        return $this->redirect(['user/index']);
+    }
+
     public function actionDaftarUser()
     {
         // Membuat model baru
