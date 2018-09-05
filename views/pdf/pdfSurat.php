@@ -1,213 +1,192 @@
-<?php
-?>
-
 <style type="text/css">
-     table {
-                    overflow: wrap;
-                    font-size: 8pt;
-                }
 
-                tr, td {
-                    padding: 0px;
-                }
+    .t-tengah   {
+        text-align: center;
+    }
 
-                div {
-                    overflow: wrap;
-                }
+    .t-kiri {
+        text-align: left;
+    }
 
-         
+    .t-kanan {
+        text-align: right;
+    }
 
-                .clear {
-                    clear: both;
-                }
+    .bersih {
+        clear: both;
+    }
 
-                .kode {
-                    border: 1px solid black;
-                    float: right;
-                    font-size: 15px;
-                    font-weight: bold;
-                    padding: 0px 10px;
-                    height: 35px;
-                    line-height: 35px;
-                    text-align: center;
-                    width: 17%;
-                }
+    .kotak {
+        border: 1px solid black;
+        padding: 0px;
+        padding-left: 3px;
+        padding-right: 3px;
+        width: 100%;
+    }
 
-                .header {
-                    font-size: 8pt;
-                    overflow: hidden;
-                }
+    .kotak-kecil {
+        border: 1px solid black;
+        padding: 0px;
+        padding-left: 3px;
+        padding-right: 3px;
+    }
 
-                .header .left {
-                    width: 60%;
-                    float: left;
-                }
+    .kotak-kanan {
+        border: 1px solid black;
+        float: right;
+        font-size: 15px;
+        font-weight: bold;
+        padding: 0px 10px;
+        height: 35px;
+        line-height: 35px;
+        text-align: center;
+        width: 17%;
+    }
 
-                .header .right {
-                    width: 40%;
-                    float: left;
-                }
+    .kotak-kiri {
+        border: 1px solid black;
+        float: left;
+        font-size: 15px;
+        font-weight: bold;
+        padding: 0px 10px;
+        height: 35px;
+        line-height: 35px;
+        text-align: center;
+        width: 17%;
+    }
 
-                .header table {
-                    border-spacing: 0px;
-                    border-collapse: collapse;
-                }
+    .fonts1 {
+        font-size: 8px;
+    }
 
-                .header table .caption {
-                    width: 45%;
-                }
+    .fonts2 {
+        font-size: 10px;
+    }
 
-                .header table .point {
-                    width: 2%;
-                }
+    .fonts3 {
+        font-size: 12px;
+    }
 
-                .header table .kotak {
-                    width: 5%;
-                }
+    p {
+        margin-top: 1px;
+        margin-bottom: 1px;
+    }
 
-                .kode span {
-                    display: inline-block;
-                    vertical-align: middle;
-                    line-height: normal;
-                }
-
-                .debug, .debug tr, .debug td {
-                    border: 1px solid black;
-                }
-
-                .kotak, .form {
-                    border-spacing: 0px;
-                    border-collapse: collapse;
-                }
-
-                .kotak {
-                    border: 1px solid black;
-                    height: 15px;
-                    width: 2.87%;
-                    text-align: center;
-                }
-
-                .colspan {
-                    padding-left: 2px;
-                    text-align: left;
-                }
-
-                .kanan {
-                    width: 1%;
-                }
-
-                .t-center {
-                    text-align: center;
-                }
-
-                h4 {
-                    font-weight: bold;
-                    font-family: Arial;
-                    font-size: 12pt;
-                }
-
-                .form .caption {
-                    width: 26.8%;
-                }
-
-                .form .point, .section .point {
-                    width: 1%;
-                }
-
-                .section {
-                    border: 2px solid black;
-                    padding: 0px;
-                    margin: -1px !important;
-                }
-
-                .section h5 {
-                    margin: 0px;
-                    font-weight: bold;
-                    text-align: left;
-                    font-size: 11px;
-                }
-
-                .section table {
-                    border-spacing: 0px;
-                    border-collapse: collapse;
-                }
-
-                .section .nomor {
-                    width: 3%;
-                }
-
-                .section .caption {
-                    width: 24%;
-                }
-
-                .section .isi {
-                    float: left;
-                    overflow: hidden;
-                    display: inline-block;
-                }
-
-                .border {
-                    border: 1px solid black;
-                }
-
-                .ttd-left {
-                    width: 30%;
-                    text-align: center;
-                }
-
-                .ttd-middle {
-                    width: 40%;
-                    text-align: center;
-                }
-
-                .ttd-right {
-                    width: 30%;
-                    text-align: center;
-                }
 </style>
 
-<div class="kode">
-    <span>
-        Kode . F-2.01
-    </span>
+<div class="kanan">
+    <h5 class="kotak-kanan">F-1.21</h5>
 </div>
 
-<div class="clear">
-    &nbsp;
+<div class="t-tengah">
+    <h5>FORMULIR PERMOHONAN KARTU TANDA PENDUDUK (KTP) WARGA NEGARA INDONESIA</h5>
 </div>
 
-<div class="t-center">
-    <h4>
-        FORMULIR PERMOHONAN KARTU TANDA PENDUDUK (KTP) WARGA NEGARA INDONESIA
-    </h4>
+<div class="kotak">
+    <p style="font-weight: bold; font-size: 12px">Perhatian :</p>
+    <p class="fonts1">1. Harap diisi dengan huruf cetak dan menggunakan tinta hitam.</p>
+    <p class="fonts1">2 Untuk kolom pilihan, harap memberi tanda silang (X) pada kotak pilihan.</p>
+    <p class="fonts1">3 Setelah formulir ini diisi dan ditandatangani, harap diserahkan kembali ke kantor Desa/Kelurahan.</p>
 </div>
 
-<div class="konten">
-    <div class="section">
-        <h5>
-            BAYI/ANAK
-        </h5>
-        <div class="clear"></div>
-        <table width="100%" autosize="1">
-            <tr>
-                <td class="point">
-                    1.  Harap diisi dengan huruf cetak dan menggunakan tinta hitam.
-                </td>
-            </tr>
-            <tr>
-                <td class="point">
-                    2. Untuk kolom pilihan, harap memberi tanda silang (X) pada kotak pilihan.
-                </td>
-            </tr>
-            <tr>
-                <td class="point">
-                    3. Setelah formulir ini diisi dan ditandatangani, harap diserahkan kembali ke kantor Desa/Kelurahan.
-                </td>
-            </tr>
-        </table>
-    </div>
-</div>
+<br>
 
-<div class="clear">
-    &nbsp;
-</div>
+<table>
+
+    <tr>
+        <td width="220"><p style="font-weight: bold; font-size: 10px">PEMERINTAH PROPINSI</p></td>
+        <td width="2">:</td>
+        <?php for ($i=1; $i <= 2; $i++) { ?>
+            <td width="20" class="kotak-kecil"></td>
+        <?php } ?>
+        <td></td>
+        <td></td>
+        <td width="50"></td>
+        <td width="240" class="kotak-kecil"></td>
+    </tr>
+
+    <tr>
+        <td width="220"><p style="font-weight: bold; font-size: 10px">PEMERINTAH KABUPATEN/KOTA</p></td>
+        <td width="2">:</td>
+        <?php for ($i=1; $i <= 2; $i++) { ?>
+            <td width="20" class="kotak-kecil"></td>
+        <?php } ?>
+        <td></td>
+        <td></td>
+        <td width="50"></td>
+        <td width="240" class="kotak-kecil"></td>
+    </tr>
+
+    <tr>
+        <td width="220"><p style="font-weight: bold; font-size: 10px">KECAMATAN</p></td>
+        <td width="2">:</td>
+        <?php for ($i=1; $i <= 2; $i++) { ?>
+            <td width="20" class="kotak-kecil"></td>
+        <?php } ?>
+        <td></td>
+        <td></td>
+        <td width="50"></td>
+        <td width="240" class="kotak-kecil"></td>
+    </tr>
+
+    <tr>
+        <td width="220"><p style="font-weight: bold; font-size: 10px">KELURAHAN/DESA</p></td>
+        <td width="2">:</td>
+        <?php for ($i=1; $i <= 4; $i++) { ?>
+            <td width="20" class="kotak-kecil"></td>
+        <?php } ?>
+        <td></td>
+        <td width="240" class="kotak-kecil"></td>
+    </tr>
+
+</table>
+
+<br>
+
+<table>
+    <tr>
+        <td width="150"><p style="font-weight: bold; font-size: 10px">PERMOHONAN KTP</p></td>
+        <td width="20" class="kotak-kecil"></td>
+        <td align="center" width="70" class="kotak-kecil"><p style="font-size: 8px;">A. Baru</p></td>
+        <td width="20"></td>
+        <td width="20" class="kotak-kecil"></td>
+        <td align="center" width="90" class="kotak-kecil"><p style="font-size: 8px;">B. Perpanjangan</p></td>
+        <td width="20"></td>
+        <td width="20" class="kotak-kecil"></td>
+        <td align="center" width="90" class="kotak-kecil"><p style="font-size: 8px;">C. Penggantian</p></td>
+    </tr>
+</table>
+
+<br>
+
+<table>
+
+    <tr>
+        <td align="left" width="100" class="kotak-kecil"><p style="font-size: 10px;">1. Nama Lengkap</p></td>
+        <?php for ($i=1; $i <= 30; $i++) { ?>
+            <td width="20" class="kotak-kecil"></td>
+        <?php } ?>
+    </tr>
+
+    <tr>
+        <td align="left" width="100" class="kotak-kecil"><p style="font-size: 10px;">2. No. KK</p></td>
+        <?php for ($i=1; $i <= 16; $i++) { ?>
+            <td width="20" class="kotak-kecil"></td>
+        <?php } ?>
+    </tr>
+
+    <tr>
+        <td align="left" width="100" class="kotak-kecil"><p style="font-size: 10px;">3. NIK</p></td>
+        <?php for ($i=1; $i <= 16; $i++) { ?>
+            <td width="20" class="kotak-kecil"></td>
+        <?php } ?>
+    </tr>
+
+</table>
+
+<table>
+    <tr>
+        <td align="left" width="100" class="kotak-kecil"><p style="font-size: 10px;">4. Alamat </p></td>
+        <td width="600" class="kotak-kecil"></td>
+    </tr>
+</table>
