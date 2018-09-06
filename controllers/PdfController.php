@@ -213,7 +213,7 @@ CSS;
         $pdf = new Mpdf([
             'mode' => Mpdf::MODE_UTF8,
             // F4 paper format
-            'format' => [210, 330],
+            'format' => 'A4-L',
             // portrait orientation
             'orientation' => Mpdf::ORIENT_PORTRAIT,
             // stream to browser inline
