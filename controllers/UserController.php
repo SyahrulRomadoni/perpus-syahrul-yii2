@@ -11,6 +11,7 @@ use yii\filters\VerbFilter;
 use PhpOffice\PhpWord\IOFactory;
 use PhpOffice\PhpWord\PhpWord;
 use PhpOffice\PhpWord\Shared\Converter;
+use app\models\ChangePasswordForm;
 
 /**
  * UserController implements the CRUD actions for User model.
@@ -128,10 +129,22 @@ class UserController extends Controller
         throw new NotFoundHttpException('The requested page does not exist.');
     }
 
-    // Custom Sendiri
-    public function actionGantiPassword()
+    // Ganti password
+    public function actionChangePassword($id)
     {
-        return $this->render('gnati_password');
+
+        $model = new ChangePasswordForm();
+
+        $user = User::findOne($id);
+
+        if ($model->load(Yii::$app->request->post())) {
+            $user->password = Yii::$app->getSecurity()->generatePasswordHash($model->password);
+            $user->save(false);
+        }
+     
+        return $this->render('changePassword', [
+            'model' => $model,
+        ]);
     }
 
     // Resert password anggota yang bisa di pakai oleh admin dan petugas.

@@ -56,6 +56,17 @@ $this->params['breadcrumbs'][] = $this->title;
                         }
                     ]
                 ],
+
+                [
+                    'class' => 'yii\grid\ActionColumn',
+                    'template' => '{changepassword}',
+                    'buttons' => [
+                        'changepassword' => function($url, $model, $key) {
+                            return Html::a('<i class="fa fa-key"></i>', ['change-password', 'id' => $model->id]);
+                        }
+                    ]
+                ],
+
             ],
         ]); ?>
 
