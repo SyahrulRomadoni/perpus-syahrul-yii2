@@ -128,6 +128,12 @@ class UserController extends Controller
         throw new NotFoundHttpException('The requested page does not exist.');
     }
 
+    // Custom Sendiri
+    public function actionGantiPassword()
+    {
+        return $this->render('gnati_password');
+    }
+
     // Resert password anggota yang bisa di pakai oleh admin dan petugas.
     public function actionResetPassword($id)
     {
