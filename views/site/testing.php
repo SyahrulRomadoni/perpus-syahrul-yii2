@@ -25,6 +25,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <p>
             <?= Html::a('<i class="fa fa-print"> Test ke Word S</i>', ['test-word-s'], ['class' => 'btn btn-info btn-flat']) ?>
             <?= Html::a('<i class="fa fa-print"> Test ke Word SS</i>', ['test-word-ss'], ['class' => 'btn btn-info btn-flat']) ?>
+            <?= Html::a('<i class="fa fa-print"> Test ke Word SSS</i>', ['test-word-sss'], ['class' => 'btn btn-info btn-flat']) ?>
             <?= Html::a('<i class="fa fa-print"> Test ke Excel S</i>', ['test-excel-s'], ['class' => 'btn btn-info btn-flat']) ?>
         </p>
     </div>

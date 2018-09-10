@@ -68,7 +68,7 @@ class SiteController extends Controller
     public function actionIndex()
     {
         // Default Yii2
-        //return $this->render('index');
+        // return $this->render('index');
 
         if (!Yii::$app->user->isGuest)
         {
@@ -404,10 +404,10 @@ class SiteController extends Controller
 
         // Membuat Jarak kertasnya
         $section = $phpWord->addSection([
-            'marginTop'    => Converter::cmToTwip(0.9),
-            'marginBottom' => Converter::cmToTwip(1),
-            'marginLeft'   => Converter::cmToTwip(2.5),
-            'marginRight'  => Converter::cmToTwip(2.5),
+            'marginTop'    => Converter::cmToTwip(0.4),
+            'marginBottom' => Converter::cmToTwip(0.4),
+            'marginLeft'   => Converter::cmToTwip(2),
+            'marginRight'  => Converter::cmToTwip(2),
         ]);
 
         // Mulai
@@ -416,12 +416,25 @@ class SiteController extends Controller
             'bold' => false,
         ];
 
+        $Bold = [
+            'bold' => true,
+            'size' => 11,
+        ];
+
+        $UnderBold = [
+            'underline' => 'single',
+            'bold'      => true,
+            'size'      => 11,
+        ];
+
         $paragraphStyleNoSpace = [
             'spaceAfter'  => 0,
             'spaceBefore' => 0,
         ];
 
         // Word
+        $section->addImage('images/01.png', ['width' => 480, 'height' => 65, 'alignment' => \PhpOffice\PhpWord\SimpleType\Jc::CENTER]);
+
         $section->addText(
             'Pangkalpinang, '. date('d F Y'),
             $headerStyle,
@@ -552,15 +565,104 @@ class SiteController extends Controller
         ]);
 
         $table->addRow(true);
-        $table->addCell(Converter::cmToTwip(12.5))->addText('tes1',null,['align' => 'center']);
-        $table->addCell(Converter::cmToTwip(12.5))->addText('tes2',null,['align' => 'center']);
+        $table->addCell(Converter::cmToTwip(12.5))->addText('Mengetahui :',null,['align' => 'center','spaceAfter'  => 0,
+            'spaceBefore' => 0,]);
+        $table->addCell(Converter::cmToTwip(12.5))->addText('Pegawai Pengawas Ketenagakerjaan',null,['align' => 'center','spaceAfter'  => 0,
+            'spaceBefore' => 0,]);
+
+        $table->addRow(true);
+        $table->addCell(Converter::cmToTwip(12.5))->addText('KEPALA DINAS,',$Bold,['align' => 'center','spaceAfter'  => 0,
+            'spaceBefore' => 0,]);
+        $table->addCell(Converter::cmToTwip(12.5))->addText('',null,['align' => 'center','spaceAfter'  => 0,
+            'spaceBefore' => 0,]);
+
+        $table->addRow(true);
+        $table->addCell(Converter::cmToTwip(12.5))->addText('',null);
+        $table->addCell(Converter::cmToTwip(12.5))->addText('',null);
+
+
+        $table->addRow(true);
+        $table->addCell(Converter::cmToTwip(12.5))->addText('',null,['align' => 'center','spaceAfter'  => 0,
+            'spaceBefore' => 0,]);
+        $table->addCell(Converter::cmToTwip(12.5))->addText('HENDRI ALPIAN, SH.',$UnderBold,['align' => 'center','spaceAfter'  => 0,
+            'spaceBefore' => 0,]);
+
+        $table->addRow(true);
+        $table->addCell(Converter::cmToTwip(12.5))->addText('',null,['align' => 'center','spaceAfter'  => 0,
+            'spaceBefore' => 0,]);
+        $table->addCell(Converter::cmToTwip(12.5))->addText('PENATA Tk.I',null,['align' => 'center','spaceAfter'  => 0,
+            'spaceBefore' => 0,]);
+
+        $table->addRow(true);
+        $table->addCell(Converter::cmToTwip(12.5))->addText('',null,['align' => 'center','spaceAfter'  => 0,
+            'spaceBefore' => 0,]);
+        $table->addCell(Converter::cmToTwip(12.5))->addText('NIP.19680422 198903 1 004',null,['align' => 'center','spaceAfter'  => 0,
+            'spaceBefore' => 0,]);
+
+        $table->addRow(true);
+        $table->addCell(Converter::cmToTwip(12.5))->addText('',null);
+        $table->addCell(Converter::cmToTwip(12.5))->addText('',null);
+
+        $table->addRow(true);
+        $table->addCell(Converter::cmToTwip(12.5))->addText('CEPPY NUGRAHA, SE',$UnderBold,['align' => 'center','spaceAfter'  => 0,
+            'spaceBefore' => 0,]);
+        $table->addCell(Converter::cmToTwip(12.5))->addText('',null,['align' => 'center','spaceAfter'  => 0,
+            'spaceBefore' => 0,]);
+
+        $table->addRow(true);
+        $table->addCell(Converter::cmToTwip(12.5))->addText('PEMBINA UTAMA MADYA',null,['align' => 'center','spaceAfter'  => 0,
+            'spaceBefore' => 0,]);
+        $table->addCell(Converter::cmToTwip(12.5))->addText('ROY HENDRAWAN T, SH.',$UnderBold,['align' => 'center','spaceAfter'  => 0,
+            'spaceBefore' => 0,]);
+
+        $table->addRow(true);
+        $table->addCell(Converter::cmToTwip(12.5))->addText('NIP. 19610112 198903 1 005',null,['align' => 'center','spaceAfter'  => 0,
+            'spaceBefore' => 0,]);
+        $table->addCell(Converter::cmToTwip(12.5))->addText('PENATA',null,['align' => 'center','spaceAfter'  => 0,
+            'spaceBefore' => 0,]);
+
+        $table->addRow(true);
+        $table->addCell(Converter::cmToTwip(12.5))->addText('',null,['align' => 'center','spaceAfter'  => 0,
+            'spaceBefore' => 0,]);
+        $table->addCell(Converter::cmToTwip(12.5))->addText('NIP. 19820729 201001 1 009',null,['align' => 'center','spaceAfter'  => 0,
+            'spaceBefore' => 0,]);
+
+        $table->addRow(true);
+        $table->addCell(Converter::cmToTwip(12.5))->addText('',null);
+        $table->addCell(Converter::cmToTwip(12.5))->addText('',null);
+
+        $table->addRow(true);
+        $table->addCell(Converter::cmToTwip(12.5))->addText('',null);
+        $table->addCell(Converter::cmToTwip(12.5))->addText('',null);
+
+        $table->addRow(true);
+        $table->addCell(Converter::cmToTwip(12.5))->addText('',null,['align' => 'center','spaceAfter'  => 0,
+            'spaceBefore' => 0,]);
+        $table->addCell(Converter::cmToTwip(12.5))->addText('ASTRIA GUSTINA, SE.',$UnderBold,['align' => 'center','spaceAfter'  => 0,
+            'spaceBefore' => 0,]);
+
+        $table->addRow(true);
+        $table->addCell(Converter::cmToTwip(12.5))->addText('',null,['align' => 'center','spaceAfter'  => 0,
+            'spaceBefore' => 0,]);
+        $table->addCell(Converter::cmToTwip(12.5))->addText('PENATA MUDA Tk.I',null,['align' => 'center','spaceAfter'  => 0,
+            'spaceBefore' => 0,]);
+
+        $table->addRow(true);
+        $table->addCell(Converter::cmToTwip(12.5))->addText('',null,['align' => 'center','spaceAfter'  => 0,
+            'spaceBefore' => 0,]);
+        $table->addCell(Converter::cmToTwip(12.5))->addText('NIP. 19850811 200604 2 002',null,['align' => 'center','spaceAfter'  => 0,
+            'spaceBefore' => 0,]);
 
         $section->addTextBreak(1);
 
-        $section->addText('Tembusan:');
-        $section->addListItem('Menteri Ketenagakerjaan;', 0, null, 'alphanum');
-        $section->addListItem('Dirjen Binwasnaker dan K3;', 0, null, 'alphanum');
-        $section->addListItem('Kepala Dinas Penanaman Modal, Pelayanan Perizinan Terpadu Satu Pintu dan Tenaga Kerja Kabupaten Bangka Tengah', 0, null, 'alphanum');
+        $section->addText('Tembusan:',null,['align' => 'left','spaceAfter'  => 0,
+            'spaceBefore' => 0,]);
+        $section->addListItem('Menteri Ketenagakerjaan;', 0, null, 'alphanum',['align' => 'left','spaceAfter'  => 0,
+            'spaceBefore' => 0,]);
+        $section->addListItem('Dirjen Binwasnaker dan K3;', 0, null, 'alphanum',['align' => 'left','spaceAfter'  => 0,
+            'spaceBefore' => 0,]);
+        $section->addListItem('Kepala Dinas Penanaman Modal, Pelayanan Perizinan Terpadu Satu Pintu dan Tenaga Kerja Kabupaten Bangka Tengah', 0, null, 'alphanum',['align' => 'left','spaceAfter'  => 0,
+            'spaceBefore' => 0,]);
 
 
         $section->addText('-----------------------------------------------------------------------------------------------------------------');
@@ -591,6 +693,313 @@ class SiteController extends Controller
 
         // Tempat penyimpanan file sama nama file.
         $filename = time() . '_' . 'Test-Word-SS.docx';
+        $path     = 'document/' . $filename;
+        $xmlWrite = IOFactory::createWriter($phpWord, 'Word2007');
+        $xmlWrite->save($path);
+
+        return $this->redirect($path);
+    }
+
+    // Test Word
+    public function actionTestWordSss() {
+
+        // Membuat model baru
+        $phpWord = new PhpWord();
+
+        // Membuat default ukuran fontz
+        $phpWord->setDefaultFontSize(10);
+
+        // Membuat default fontz
+        $phpWord->setDefaultFontName('Bookman Old Style');
+
+        // Membuat Jarak kertasnya
+        $section = $phpWord->addSection([
+            'marginTop'    => Converter::cmToTwip(0.4),
+            'marginBottom' => Converter::cmToTwip(0.4),
+            'marginLeft'   => Converter::cmToTwip(2),
+            'marginRight'  => Converter::cmToTwip(2),
+        ]);
+
+        // Mulai
+        // Custom Style
+        $headerStyle = [
+            'bold' => false,
+        ];
+
+        $Bold = [
+            'bold' => true,
+            'size' => 11,
+        ];
+
+        $UnderBold = [
+            'underline' => 'single',
+            'bold'      => true,
+            'size'      => 11,
+        ];
+
+        $paragraphStyleNoSpace = [
+            'spaceAfter'  => 0,
+            'spaceBefore' => 0,
+        ];
+
+        // Word
+        $section->addImage('images/01.png', ['width' => 480, 'height' => 65, 'alignment' => \PhpOffice\PhpWord\SimpleType\Jc::CENTER]);
+
+        $section->addText(
+            'Pangkalpinang, '. date('d F Y'),
+            $headerStyle,
+            [
+                'alignment' => 'right'
+            ]
+        );
+
+        $section->addText(
+            'Nomer      : R.560/NP.     /DISNAKER/2018.',
+            $headerStyle,
+            $paragraphStyleNoSpace,
+            [
+                'alignment' => 'left'
+            ]
+        );
+
+        $section->addText(
+            'Sifat         : Rahasia',
+            $headerStyle,
+            $paragraphStyleNoSpace,
+            [
+                'alignment' => 'left'
+            ]
+        );
+
+        $section->addText(
+            'Lampiran : -',
+            $headerStyle,
+            $paragraphStyleNoSpace,
+            [
+                'alignment' => 'left'
+            ]
+        );
+
+        $section->addText(
+            'Perihal     : Nota Pemeriksaan II',
+            $headerStyle,
+            $paragraphStyleNoSpace,
+            [
+                'alignment' => 'left'
+            ]
+        );
+
+        $section->addTextBreak(1);
+
+        $section->addText(
+            'Yth. Sdr Direktur Utama/Pengurus',
+            $headerStyle,
+            $paragraphStyleNoSpace,
+            [
+                'alignment' => 'left'
+            ]
+        );
+
+        $section->addText(
+            'PT. Angkasa Pura II (Persero)',
+            $headerStyle,
+            $paragraphStyleNoSpace,
+            [
+                'alignment' => 'left'
+            ]
+        );
+
+        $section->addText(
+            'di PANGKALANBARU',
+            $headerStyle,
+            $paragraphStyleNoSpace,
+            [
+                'alignment' => 'left'
+            ]
+        );
+
+        $section->addTextBreak(1);
+
+        $phpWord->addNumberingStyle(
+            'alphanum',
+            array('type' => 'multilevel', 'levels' => array(
+                array(
+                    'format' => 'decimal', 'text' => '%1.',
+                    'left' => 360, 'hanging' => 360, 'tabPos' => 360),
+                )
+            )
+        );
+
+        $section->addText(
+            "\t Menindaklanjuti Nota Pemeriksaan I No R.560/NP.044.A/DISNAKER/2017 tanggal 25 April 2017 diminta kepada Saudara untuk melaksanakan isi Nota Pemeriksaan I tersebut dan melaporkan segala sesuatunya secara tertulis kepada kami dalam waktu 7 (tujuh) hari sejak diterimanya Nota Pemeriksaan II ini.",
+            $headerStyle,
+            $paragraphStyleNoSpace,
+            [
+                'alignment' => 'left'
+            ]
+        );
+
+        $section->addText(
+            "\t Apabila dalam waktu yang telah ditentukan, Saudara tetap tidak melaksanakan Nota Pemeriksaan ini dan tidak melaporkan segala sesuatunya secara tertulis kepada kami, akan diproses hukum lebih lanjut sesuai dengan peraturan perundang-undangan.",
+            $headerStyle,
+            $paragraphStyleNoSpace,
+            [
+                'alignment' => 'left'
+            ]
+        );
+
+        $section->addText(
+            "\t Nota Pemeriksaan II ini dibuat sebagai peringatan terakhir atas ketidakpatuhan terhadap peraturan perundang-undangan bidang ketenagakerjaan.",
+            $headerStyle,
+            $paragraphStyleNoSpace,
+            [
+                'alignment' => 'left'
+            ]
+        );
+
+        $section->addText(
+            "\t     Demikian, atas perhatiannya diucapkan terima kasih.",
+            $headerStyle,
+            $paragraphStyleNoSpace,
+            [
+                'alignment' => 'left'
+            ]
+        );
+
+        $section->addTextBreak(1);
+
+        $table = $section->addTable([
+            'alignment' => 'center', 
+            'bgColor' => '000000',
+            'borderSize' => 'transfer',
+        ]);
+
+        $table->addRow(true);
+        $table->addCell(Converter::cmToTwip(12.5))->addText('Mengetahui :',null,['align' => 'center','spaceAfter'  => 0,
+            'spaceBefore' => 0,]);
+        $table->addCell(Converter::cmToTwip(12.5))->addText('Pegawai Pengawas Ketenagakerjaan',null,['align' => 'center','spaceAfter'  => 0,
+            'spaceBefore' => 0,]);
+
+        $table->addRow(true);
+        $table->addCell(Converter::cmToTwip(12.5))->addText('KEPALA DINAS,',$Bold,['align' => 'center','spaceAfter'  => 0,
+            'spaceBefore' => 0,]);
+        $table->addCell(Converter::cmToTwip(12.5))->addText('',null,['align' => 'center','spaceAfter'  => 0,
+            'spaceBefore' => 0,]);
+
+        $table->addRow(true);
+        $table->addCell(Converter::cmToTwip(12.5))->addText('',null);
+        $table->addCell(Converter::cmToTwip(12.5))->addText('',null);
+
+        $table->addRow(true);
+        $table->addCell(Converter::cmToTwip(12.5))->addText('DIDIK SUPRAPTO, SH',$UnderBold,['align' => 'center','spaceAfter'  => 0,
+            'spaceBefore' => 0,]);
+        $table->addCell(Converter::cmToTwip(12.5))->addText('ROY HENDRAWAN. T, SH.',$UnderBold,['align' => 'center','spaceAfter'  => 0,
+            'spaceBefore' => 0,]);
+
+        $table->addRow(true);
+        $table->addCell(Converter::cmToTwip(12.5))->addText('PEMBINA UTAMA MADYA',null,['align' => 'center','spaceAfter'  => 0,
+            'spaceBefore' => 0,]);
+        $table->addCell(Converter::cmToTwip(12.5))->addText('PENATA',null,['align' => 'center','spaceAfter'  => 0,
+            'spaceBefore' => 0,]);
+
+        $table->addRow(true);
+        $table->addCell(Converter::cmToTwip(12.5))->addText('NIP.19580908 198503 1 006',null,['align' => 'center','spaceAfter'  => 0,
+            'spaceBefore' => 0,]);
+        $table->addCell(Converter::cmToTwip(12.5))->addText('NIP.19820729 201001 1 009',null,['align' => 'center','spaceAfter'  => 0,
+            'spaceBefore' => 0,]);
+
+        $table->addRow(true);
+        $table->addCell(Converter::cmToTwip(12.5))->addText('',null);
+        $table->addCell(Converter::cmToTwip(12.5))->addText('',null);
+
+        $table->addRow(true);
+        $table->addCell(Converter::cmToTwip(12.5))->addText('',null);
+        $table->addCell(Converter::cmToTwip(12.5))->addText('',null);
+
+        $table->addRow(true);
+        $table->addCell(Converter::cmToTwip(12.5))->addText('',null,['align' => 'center','spaceAfter'  => 0,
+            'spaceBefore' => 0,]);
+        $table->addCell(Converter::cmToTwip(12.5))->addText('JOKO TEGUH PRASTYO, ST.',$UnderBold,['align' => 'center','spaceAfter'  => 0,
+            'spaceBefore' => 0,]);
+
+        $table->addRow(true);
+        $table->addCell(Converter::cmToTwip(12.5))->addText('',null,['align' => 'center','spaceAfter'  => 0,
+            'spaceBefore' => 0,]);
+        $table->addCell(Converter::cmToTwip(12.5))->addText('PENATA MUDA Tk. I',null,['align' => 'center','spaceAfter'  => 0,
+            'spaceBefore' => 0,]);
+
+        $table->addRow(true);
+        $table->addCell(Converter::cmToTwip(12.5))->addText('',null,['align' => 'center','spaceAfter'  => 0,
+            'spaceBefore' => 0,]);
+        $table->addCell(Converter::cmToTwip(12.5))->addText('NIP. 19800908 201001 1 011',null,['align' => 'center','spaceAfter'  => 0,
+            'spaceBefore' => 0,]);
+
+        $table->addRow(true);
+        $table->addCell(Converter::cmToTwip(12.5))->addText('',null);
+        $table->addCell(Converter::cmToTwip(12.5))->addText('',null);
+
+        $table->addRow(true);
+        $table->addCell(Converter::cmToTwip(12.5))->addText('',null);
+        $table->addCell(Converter::cmToTwip(12.5))->addText('',null);
+
+        $table->addRow(true);
+        $table->addCell(Converter::cmToTwip(12.5))->addText('',null,['align' => 'center','spaceAfter'  => 0,
+            'spaceBefore' => 0,]);
+        $table->addCell(Converter::cmToTwip(12.5))->addText('ISNA YULYANTI, S.Psi.',$UnderBold,['align' => 'center','spaceAfter'  => 0,
+            'spaceBefore' => 0,]);
+
+        $table->addRow(true);
+        $table->addCell(Converter::cmToTwip(12.5))->addText('',null,['align' => 'center','spaceAfter'  => 0,
+            'spaceBefore' => 0,]);
+        $table->addCell(Converter::cmToTwip(12.5))->addText('PENATA MUDA',null,['align' => 'center','spaceAfter'  => 0,
+            'spaceBefore' => 0,]);
+
+        $table->addRow(true);
+        $table->addCell(Converter::cmToTwip(12.5))->addText('',null,['align' => 'center','spaceAfter'  => 0,
+            'spaceBefore' => 0,]);
+        $table->addCell(Converter::cmToTwip(12.5))->addText('NIP. 19850729 201502 2 001',null,['align' => 'center','spaceAfter'  => 0,
+            'spaceBefore' => 0,]);
+
+        $section->addTextBreak(1);
+
+        $section->addText('Tembusan:',null,['align' => 'left','spaceAfter'  => 0,
+            'spaceBefore' => 0,]);
+        $section->addListItem('Menteri Ketenagakerjaan;', 0, null, 'alphanum',['align' => 'left','spaceAfter'  => 0,
+            'spaceBefore' => 0,]);
+        $section->addListItem('Dirjen Binwasnaker dan K3;', 0, null, 'alphanum',['align' => 'left','spaceAfter'  => 0,
+            'spaceBefore' => 0,]);
+        $section->addListItem('Kepala Dinas Penanaman Modal, Pelayanan Perizinan Terpadu Satu Pintu dan Tenaga Kerja Kabupaten Bangka Tengah', 0, null, 'alphanum',['align' => 'left','spaceAfter'  => 0,
+            'spaceBefore' => 0,]);
+
+
+        $section->addText('-----------------------------------------------------------------------------------------------------------------');
+
+        $section->addText('Pada hari ini, .................................... tanggal, .................................... 1 (satu) lembar Nota Pemeriksaan II telah diterima oleh yang bersangkutan.');
+
+        $table = $section->addTable([
+            'alignment' => 'center', 
+            'bgColor' => '000000',
+            'borderSize' => 'transfer',
+        ]);
+
+        $table->addRow(true);
+        $table->addCell(Converter::cmToTwip(12.5))->addText('Yang Menerima,',null,['align' => 'center']);
+        $table->addCell(Converter::cmToTwip(12.5))->addText('Yang Menyerahkan,',null,['align' => 'center']);
+
+        $section->addTextBreak(2);
+
+        $table = $section->addTable([
+            'alignment' => 'center', 
+            'bgColor' => '000000',
+            'borderSize' => 'transfer',
+        ]);
+
+        $table->addRow(true);
+        $table->addCell(Converter::cmToTwip(12.5))->addText('(                              ),',null,['align' => 'center']);
+        $table->addCell(Converter::cmToTwip(12.5))->addText('(                              ),',null,['align' => 'center']);
+
+        // Tempat penyimpanan file sama nama file.
+        $filename = time() . '_' . 'Test-Word-SSS.docx';
         $path     = 'document/' . $filename;
         $xmlWrite = IOFactory::createWriter($phpWord, 'Word2007');
         $xmlWrite->save($path);
