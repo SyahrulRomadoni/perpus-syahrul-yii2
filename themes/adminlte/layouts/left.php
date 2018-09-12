@@ -1,3 +1,6 @@
+<?php
+    use app\models\User;
+?>
 <aside class="main-sidebar">
 
     <section class="sidebar">
@@ -27,7 +30,7 @@
         <!-- /.search form -->
 
         <!-- | Navigation Admin | -->
-        <?php if (Yii::$app->user->identity->id_user_role == 1): ?>
+        <?php if /*(Yii::$app->user->identity->id_user_role == 1):*/ (User::isAdmin()) { ?>
             <?= dmstr\widgets\Menu::widget(
                 [
                     'options' => ['class' => 'sidebar-menu tree', 'data-widget'=> 'tree'],
@@ -103,10 +106,10 @@
                     ],
                 ]
             ) ?>
-        <?php endif ?>
+        <?php //endif ?>
 
         <!-- | Navigation Anggota | -->
-        <?php if (Yii::$app->user->identity->id_user_role == 2): ?>
+        <?php } elseif /* if (Yii::$app->user->identity->id_user_role == 2):*/ (User::isAnggota()) { ?>
             <?= dmstr\widgets\Menu::widget(
                 [
                     'options' => ['class' => 'sidebar-menu tree', 'data-widget'=> 'tree'],
@@ -182,10 +185,10 @@
                     ],
                 ]
             ) ?>
-        <?php endif ?>
+        <?php //endif ?>
 
         <!-- | Navigation Petugas | -->
-        <?php if (Yii::$app->user->identity->id_user_role == 3): ?>
+        <?php } elseif /* if (Yii::$app->user->identity->id_user_role == 3):*/ (User::isPetugas()) { ?>
             <?= dmstr\widgets\Menu::widget(
                 [
                     'options' => ['class' => 'sidebar-menu tree', 'data-widget'=> 'tree'],
@@ -261,7 +264,7 @@
                     ],
                 ]
             ) ?>
-        <?php endif ?>
+        <?php } //endif ?>
 
     </section>
 
