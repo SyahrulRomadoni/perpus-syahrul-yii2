@@ -8,6 +8,8 @@ use app\models\PeminjamanSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use app\models\User;
+use yii\filters\AccessControl;
 
 /**
  * PeminjamanController implements the CRUD actions for Peminjaman model.
@@ -20,6 +22,24 @@ class PeminjamanController extends Controller
     public function behaviors()
     {
         return [
+
+            // Access Control URL.
+            'access' => [
+                'class' => AccessControl::className(),
+                'rules' => [
+                    [
+                        'actions' => ['update', 'view'],
+                        'allow' => User::isAdmin() || User::isPetugas(),
+                        'roles' => ['@'],
+                    ],
+                    [
+                        'actions' => ['index', 'create'],
+                        'allow' => User::isAdmin() || User::isPetugas() || User::isAnggota(),
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
+
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [

@@ -13,6 +13,8 @@ use PhpOffice\PhpWord\IOFactory;
 use PhpOffice\PhpWord\PhpWord;
 use PhpOffice\PhpWord\Shared\Converter;
 use Mpdf\Mpdf;
+use app\models\User;
+use yii\filters\AccessControl;
 
 /**
  * BukuController implements the CRUD actions for Buku model.
@@ -22,9 +24,28 @@ class BukuController extends Controller
     /**
      * {@inheritdoc}
      */
+
     public function behaviors()
     {
         return [
+
+            // Access Control URL.
+            'access' => [
+                'class' => AccessControl::className(),
+                'rules' => [
+                    [
+                        'actions' => ['index', 'update', 'create'],
+                        'allow' => User::isAdmin() || User::isPetugas(),
+                        'roles' => ['@'],
+                    ],
+                    [
+                        'actions' => ['view'],
+                        'allow' => User::isAdmin() || User::isPetugas() || User::isAnggota(),
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
+            
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [

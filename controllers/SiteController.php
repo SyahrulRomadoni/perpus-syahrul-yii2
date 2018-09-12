@@ -15,6 +15,7 @@ use PhpOffice\PhpWord\Shared\Converter;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 use PhpOffice\PhpWord\Style\TablePosition;
+use app\models\User;
 
 class SiteController extends Controller
 {
@@ -143,7 +144,12 @@ class SiteController extends Controller
     // Custom Sendiri
     public function actionDashboard()
     {
-        return $this->render('dashboard');
+        // Jika bila user login trs keluar dan user terus masuk lewat url itu tidak bisa maka balik ke login.
+        if (User::isAdmin() || User::isAnggota() || User::isPetugas()) {
+            return $this->render('dashboard');
+        } else {
+            return $this->redirect('site/login');
+        }
     }
 
     // Custom Sendiri

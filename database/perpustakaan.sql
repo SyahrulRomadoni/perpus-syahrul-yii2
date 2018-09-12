@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 05 Sep 2018 pada 13.05
+-- Generation Time: 12 Sep 2018 pada 12.53
 -- Versi Server: 10.1.28-MariaDB
 -- PHP Version: 7.1.10
 
@@ -138,7 +138,9 @@ INSERT INTO `peminjaman` (`id`, `id_buku`, `id_anggota`, `tanggal_pinjam`, `tang
 (3, 13, 8, '2018-09-04', '2018-09-11'),
 (4, 15, 9, '2018-09-04', '2018-09-11'),
 (5, 13, 9, '2018-09-04', '2018-09-11'),
-(6, 14, 9, '2018-09-04', '2018-09-11');
+(6, 14, 9, '2018-09-04', '2018-09-11'),
+(7, 15, 8, '2018-09-12', '2018-09-19'),
+(8, 12, 9, '2018-09-12', '2018-09-19');
 
 -- --------------------------------------------------------
 
@@ -338,7 +340,7 @@ ALTER TABLE `kategori`
 -- AUTO_INCREMENT for table `peminjaman`
 --
 ALTER TABLE `peminjaman`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `penerbit`

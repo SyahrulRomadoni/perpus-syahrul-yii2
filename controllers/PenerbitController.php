@@ -13,6 +13,8 @@ use PhpOffice\PhpWord\PhpWord;
 use PhpOffice\PhpWord\Shared\Converter;
 use yii\widgets\ActiveForm;
 use yii\web\Response;
+use app\models\User;
+use yii\filters\AccessControl;
 
 /**
  * PenerbitController implements the CRUD actions for Penerbit model.
@@ -25,6 +27,19 @@ class PenerbitController extends Controller
     public function behaviors()
     {
         return [
+
+            // Access Control URL.
+            'access' => [
+                'class' => AccessControl::className(),
+                'rules' => [
+                    [
+                        'actions' => ['index', 'create', 'update', 'view'],
+                        'allow' => User::isAdmin() || User::isPetugas(),
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
+
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [

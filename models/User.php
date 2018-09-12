@@ -119,4 +119,51 @@ class User extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
         return true;
     }
 
+    // Buat Access Contol User.
+    public static function isAdmin()
+    {
+        // Jika bila user login trs keluar dan user terus masuk lewat url itu tidak bisa maka balik ke login.
+        if (Yii::$app->user->isGuest) {
+           return false;
+        }
+
+        // Buat id akses login user
+        if (($user = User::findOne(Yii::$app->user->identity->id_user_role == 1))) {
+            return $user;
+        } else {
+            return false;
+        }
+    }
+
+    // Buat Access Contol User.
+    public static function isAnggota()
+    {
+        // Jika bila user login trs keluar dan user terus masuk lewat url itu tidak bisa maka balik ke login.
+        if (Yii::$app->user->isGuest) {
+           return false;
+        }
+
+        // Buat id akses login user
+        if (($user = User::findOne(Yii::$app->user->identity->id_user_role == 2))) {
+            return $user;
+        } else {
+            return false;
+        }
+    }
+
+    // Buat Access Contol User.
+    public static function isPetugas()
+    {
+        // Jika bila user login trs keluar dan user terus masuk lewat url itu tidak bisa maka balik ke login.
+        if (Yii::$app->user->isGuest) {
+           return false;
+        }
+
+        // Buat id akses login user
+        if (($user = User::findOne(Yii::$app->user->identity->id_user_role == 3))) {
+            return $user;
+        } else {
+            return false;
+        }
+    }
 }
