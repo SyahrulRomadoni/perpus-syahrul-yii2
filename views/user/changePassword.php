@@ -6,20 +6,29 @@ use yii\widgets\ActiveForm;
 /* @var $model frontend\models\ChangePasswordForm */
 /* @var $form ActiveForm */
  
-$this->title = 'Ganti Password';
+$this->title = 'Password';
 ?>
-<div class="user-form">
- 
-    <?php $form = ActiveForm::begin(); ?>
- 
-        <?= $form->field($model, 'password')->passwordInput() ?>
+<div class="user-form box box-primary">
 
-        <?= $form->field($model, 'confirm_password')->passwordInput() ?>
- 
-        <div class="form-group">
-            <?= Html::submitButton('Simpan', ['class' => 'btn btn-primary']) ?>
-        </div>
-         
-    <?php ActiveForm::end(); ?>
+	<div class="box-header">
+        <h3 class="box-title">Ganti Password.</h3>
+    </div>
+ 	
+ 	<div class="box-body">
+
+		<?php $form = ActiveForm::begin(); ?>
+
+		    <?= $form->field($model, 'password')->passwordInput() ?>
+
+		    <?= $form->field($model, 'confirm_password')->passwordInput() ?>
+
+		    <div class="form-group">
+		    	<button type="button" class="btn btn-default" onclick="history.back()"><i class="fa fa-arrow-left"></i> Kembali</button>
+		        <?= Html::submitButton('Simpan', ['class' => 'btn btn-primary']) ?>
+		    </div>
+		     
+		<?php ActiveForm::end(); ?>
+		
+	</div>
  
 </div>
