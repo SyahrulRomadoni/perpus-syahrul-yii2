@@ -13,6 +13,7 @@ use app\models\Anggota;
 use app\models\Petugas;
 use app\models\User;
 use app\models\Peminjaman;
+use yii\widgets\LinkPager;
 
 $this->title = 'Perpustakaan Dashboard';
 $this->params['breadcrumbs'][] = $this->title;
@@ -252,7 +253,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
 <div class="row">
 
-    <?php foreach (Buku::find()->all() as $buku) {?> 
+    <?php foreach ($provider->getModels() as $buku) {?> 
         <!-- Kolom box mulai -->
         <div class="col-md-4">
 
@@ -292,8 +293,17 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php
         }
     ?>
-
 </div>
+
+<!-- Pagingation -->
+<div class="row">
+    <center>
+        <?= LinkPager::widget([
+            'pagination' => $provider->pagination,
+        ])?>
+    </center>
+</div>
+
 <?php endif ?>
 
 <!-- Dashboard Petugas -->

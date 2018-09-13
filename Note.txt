@@ -1,5 +1,4 @@
-- membuat paggination di view home anggota.
-- membuat block url user anggota rbac
-- update password security masi blm
+- //update password security masi blm
 - menghilang kan nama admin di view user index
 - pencarian buku di anggota
+- edit profile

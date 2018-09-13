@@ -220,7 +220,11 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <div class="buku-view">
         <button type="button" class="btn btn-default" onclick="history.back()"><i class="fa fa-arrow-left"></i> Kembali</button>
-        <button type="button" class="btn btn-primary"><i class="fa fa-file"></i> Pinjam Buku</button>
+        <?= Html::a('<i class="fa fa-file"> Pinjam Buku</i>', ['peminjaman/create', 'id_buku' => $model->id], ['class' => 'btn btn-primary',
+            'data' => [
+                'confirm' => 'Apa anda yakin ingin meminjam buku ini?',
+            ],
+        ]) ?>
     </div>
 <?php endif ?>
 

@@ -16,6 +16,8 @@ use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 use PhpOffice\PhpWord\Style\TablePosition;
 use app\models\User;
+use yii\widgets\ListView;
+use yii\data\ActiveDataProvider;
 
 class SiteController extends Controller
 {
@@ -146,7 +148,16 @@ class SiteController extends Controller
     {
         // Jika bila user login trs keluar dan user terus masuk lewat url itu tidak bisa maka balik ke login.
         if (User::isAdmin() || User::isAnggota() || User::isPetugas()) {
-            return $this->render('dashboard');
+
+            // Bikin pagination di dasboard anggota.
+            $provider = new ActiveDataProvider([
+                'query' => \app\models\Buku::find(),
+                'pagination' => [
+                    'pageSize' => 6
+                ],
+            ]);
+
+            return $this->render('dashboard', ['provider' => $provider]);
         } else {
             return $this->redirect('site/login');
         }
