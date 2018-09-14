@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 13 Sep 2018 pada 11.56
+-- Generation Time: 14 Sep 2018 pada 12.43
 -- Versi Server: 10.1.28-MariaDB
 -- PHP Version: 7.1.10
 
@@ -42,7 +42,7 @@ CREATE TABLE `anggota` (
 --
 
 INSERT INTO `anggota` (`id`, `nama`, `alamat`, `telepon`, `email`, `status_aktif`) VALUES
-(8, 'anggota1', 'ala anggota1', '1242142353254', 'anggota1@gmail.com', 1),
+(8, 'anggota1', 'ala anggota11', '1242142353254', 'anggota1@gmail.com', 1),
 (9, 'anggota2', 'ala anggota2', '4235423424235', 'anggota2@gmail.com', 1);
 
 -- --------------------------------------------------------
@@ -236,10 +236,10 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `username`, `password`, `id_anggota`, `id_petugas`, `id_user_role`, `status`) VALUES
-(1, 'admin', '$2y$13$VSqn1u0bIsYZVs2ZX4zlt.di0iyBOzPb329TBk/0QgE2GuRhH0RPy', 0, 0, 1, 1),
-(14, 'anggota1', '$2y$13$QCunQZveRL7jXZgLjKId7O6cziOz9IlS11QrtdFB9Syl2auQOVhYi', 8, 0, 2, 2),
+(1, 'admin', '$2y$13$MSTQJKYv9O9Cmhs0izn3wO0hlso23fk1ucW8Iu0/iDK4ivS32oqjy', 0, 0, 1, 1),
+(14, 'anggota1', '$2y$13$eQ0fC05wq7IPNfnTNMAdzuDwtLCgeBMqwmiG0yDMPbaQxAR.a.PHK', 8, 0, 2, 2),
 (15, 'anggota2', '$2y$13$BlhS9K9OmSYoD5BNV2HczuW320lOgglEPu6tVhQ9PnjT7ozQ5rWPy', 9, 0, 2, 2),
-(16, 'petugas1', '$2y$13$BEwoGYyROe2iNiOFdbzo9ODbkcEYEvMCZlX4XtBEF/PSfd6tN2Ffq', 0, 4, 3, 3),
+(16, 'petugas1', '$2y$13$AmXBSZfLMlqZP1brszsSO.scYoy1F3/lvKMl.K/F53uOmbV2z6mMu', 0, 4, 3, 3),
 (17, 'petugas2', '$2y$13$WSHxM9zUDfQCCNtSugO7Yu6Pu7kboic4AOvckpnVUFIKZ3jurNWNe', 0, 5, 3, 3);
 
 -- --------------------------------------------------------

@@ -13,6 +13,8 @@ use PhpOffice\PhpWord\PhpWord;
 use PhpOffice\PhpWord\Shared\Converter;
 use yii\widgets\ActiveForm;
 use yii\web\Response;
+use app\models\User;
+use yii\filters\AccessControl;
 
 /**
  * PetugasController implements the CRUD actions for Petugas model.
@@ -25,6 +27,19 @@ class PetugasController extends Controller
     public function behaviors()
     {
         return [
+
+            // Access Control URL.
+            'access' => [
+                'class' => AccessControl::className(),
+                'rules' => [
+                    [
+                        'actions' => ['index', 'view', 'create', 'update'],
+                        'allow' => User::isAdmin() || User::isPetugas(),
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
+
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [

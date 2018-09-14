@@ -246,7 +246,7 @@ use yii\helpers\Html;
 
                             <p>
                                 <?= Yii::$app->user->identity->username  ?>
-                                <small>Member since <?= date('d F Y') ?></small>
+                                <small>Tanggal Masuk : <?= date('d F Y') ?></small>
                             </p>
                         </li>
                         <!-- Menu Body -->

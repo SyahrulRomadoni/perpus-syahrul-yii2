@@ -13,6 +13,8 @@ use PhpOffice\PhpWord\PhpWord;
 use PhpOffice\PhpWord\Shared\Converter;
 use yii\widgets\ActiveForm;
 use yii\web\Response;
+use app\models\User;
+use yii\filters\AccessControl;
 
 /**
  * AnggotaController implements the CRUD actions for Anggota model.
@@ -25,6 +27,24 @@ class AnggotaController extends Controller
     public function behaviors()
     {
         return [
+
+            // Access Control URL.
+            'access' => [
+                'class' => AccessControl::className(),
+                'rules' => [
+                    [
+                        'actions' => ['index'],
+                        'allow' => User::isAdmin() || User::isPetugas(),
+                        'roles' => ['@'],
+                    ],
+                    [
+                        'actions' => ['view', 'create', 'update'],
+                        'allow' => User::isAdmin() || User::isPetugas() || User::isAnggota(),
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
+
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [

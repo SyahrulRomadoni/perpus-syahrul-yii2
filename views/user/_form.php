@@ -16,18 +16,20 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'username')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'password')->passwordInput(['maxlength' => true]) ?>
+    <?php /*<?= $form->field($model, 'password')->passwordInput(['maxlength' => true]) ?>*/ ?>
 
-    <?= $form->field($model, 'id_anggota')->textInput() ?>
+    <?php /*<?= $form->field($model, 'id_anggota')->textInput() ?>*/ ?>
 
-    <?= $form->field($model, 'id_petugas')->textInput() ?>
+    <?php /*<?= $form->field($model, 'id_petugas')->textInput() ?>*/ ?>
 
-    <?= $form->field($model, 'id_user_role')->textInput() ?>
+    <?php /*<?= $form->field($model, 'id_user_role')->textInput() ?>*/ ?>
 
-    <?= $form->field($model, 'status')->textInput() ?>
+    <?php /*<?= $form->field($model, 'status')->textInput() ?>*/ ?>
 
     <div class="form-group">
-        <?= Html::submitButton('Simpan', ['class' => 'btn btn-success']) ?>
+        <button type="button" class="btn btn-default" onclick="history.back()"><i class="fa fa-arrow-left"></i> Kembali</button>
+        <?= Html::submitButton('Simpan Username', ['class' => 'btn btn-success']) ?>
+        <?= Html::a('<i class="fa fa-key"> Ganti Password</i>', ['change-password', 'id' => $model->id], ['class' => 'btn btn-primary']); ?>
     </div>
 
     <?php ActiveForm::end(); ?>
@@ -38,6 +40,11 @@ use yii\widgets\ActiveForm;
 <!-- From anggota -->
 <?php if (Yii::$app->user->identity->id_user_role == 2): ?>
 <div class="user-form">
+
+    <div class="form-group">
+        <?= Html::a('<i class="fa fa-user"> Biodata</i>', ['anggota/view', 'id' => $model->id_anggota], ['class' => 'btn btn-primary']); ?>
+        <?= Html::a('<i class="fa fa-key"> Ganti Password</i>', ['change-password', 'id' => $model->id], ['class' => 'btn btn-primary']); ?>
+    </div>
 
     <?php $form = ActiveForm::begin(); ?>
 
@@ -55,8 +62,7 @@ use yii\widgets\ActiveForm;
 
     <div class="form-group">
         <button type="button" class="btn btn-default" onclick="history.back()"><i class="fa fa-arrow-left"></i> Kembali</button>
-        <?= Html::submitButton('Simpan', ['class' => 'btn btn-success']) ?>
-        <?= Html::a('<i class="fa fa-key"> Ganti Password</i>', ['change-password', 'id' => $model->id], ['class' => 'btn btn-primary']); ?>
+        <?= Html::submitButton('Simpan Username', ['class' => 'btn btn-success']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>
@@ -68,22 +74,28 @@ use yii\widgets\ActiveForm;
 <?php if (Yii::$app->user->identity->id_user_role == 3): ?>
 <div class="user-form">
 
+    <div class="form-group">
+        <?= Html::a('<i class="fa fa-user"> Biodata</i>', ['petugas/view', 'id' => $model->id_petugas], ['class' => 'btn btn-primary']); ?>
+        <?= Html::a('<i class="fa fa-key"> Ganti Password</i>', ['change-password', 'id' => $model->id], ['class' => 'btn btn-primary']); ?>
+    </div>
+
     <?php $form = ActiveForm::begin(); ?>
 
     <?= $form->field($model, 'username')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'password')->passwordInput(['maxlength' => true]) ?>
+    <?php /*<?= $form->field($model, 'password')->passwordInput(['maxlength' => true]) ?>*/ ?>
 
-    <?= $form->field($model, 'id_anggota')->textInput() ?>
+    <?php /*<?= $form->field($model, 'id_anggota')->textInput() ?>*/ ?>
 
-    <?= $form->field($model, 'id_petugas')->textInput() ?>
+    <?php /*<?= $form->field($model, 'id_petugas')->textInput() ?>*/ ?>
 
-    <?= $form->field($model, 'id_user_role')->textInput() ?>
+    <?php /*<?= $form->field($model, 'id_user_role')->textInput() ?>*/ ?>
 
-    <?= $form->field($model, 'status')->textInput() ?>
+    <?php /*<?= $form->field($model, 'status')->textInput() ?>*/ ?>    
 
     <div class="form-group">
-        <?= Html::submitButton('Simpan', ['class' => 'btn btn-success']) ?>
+        <button type="button" class="btn btn-default" onclick="history.back()"><i class="fa fa-arrow-left"></i> Kembali</button>
+        <?= Html::submitButton('Simpan Username', ['class' => 'btn btn-success']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

@@ -2,3 +2,5 @@
 - menghilang kan nama admin di view user index
 - pencarian buku di anggota
 - edit profile > edit user dan biodata harus beda atau edit nya fromnya satu satu
+- cara ganti 1 dan 2 jadi aktif dan tidak aktif
+- cara membuat status buku pinjam atau belum kembalik di luar tabel databases.

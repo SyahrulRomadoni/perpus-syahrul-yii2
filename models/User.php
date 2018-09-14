@@ -167,4 +167,16 @@ class User extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
             return false;
         }
     }
+
+    // Relasi 2 tabel yang dimana tabel user dan tabel anggota di gambungkan dan di tampilkan di view.
+    public function getAnggota()
+    {
+        return $this->hasOne(Anggota::className(), ['id' => 'id_anggota']);
+    }
+
+    // Relasi 2 tabel yang dimana tabel user dan tabel petugas di gambungkan dan di tampilkan di view.
+    public function getPetugas()
+    {
+        return $this->hasOne(Petugas::className(), ['id' => 'id_petugas']);
+    }
 }
