@@ -52,6 +52,12 @@ class Anggota extends \yii\db\ActiveRecord
             'status_aktif' => 'Status Aktif',
         ];
     }
+
+    // Untuk mengambil data yang ada di tabel ini sendiri dan di tampilkan di _from tambah buku di bagian create buku.
+    public static function getList()
+    {
+        return \yii\helpers\ArrayHelper::map(self::find()->all(), 'id', 'nama');
+    }
     
     // Untuk menghitung jumlah data yang ada di tabel ini sendiri dan di tampilkan chart kotak.
     public static function getCount()

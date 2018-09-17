@@ -89,4 +89,8 @@ $this->params['breadcrumbs'][] = $this->title;
     </div>
 
 </div>
+
+<div class="form-group">
+    <button type="button" class="btn btn-default" onclick="history.back()"><i class="fa fa-arrow-left"></i> Kembali</button>
+</div> 
 <?php endif ?>

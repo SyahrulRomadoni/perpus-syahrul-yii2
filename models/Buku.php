@@ -61,6 +61,12 @@ class Buku extends \yii\db\ActiveRecord
         ];
     }
 
+    // Untuk mengambil data yang ada di tabel ini sendiri dan di tampilkan di _from tambah buku di bagian create buku.
+    public static function getList()
+    {
+        return \yii\helpers\ArrayHelper::map(self::find()->all(), 'id', 'nama');
+    }
+
     // Untuk mengambil id_penulis di tabel buku dirubah jadi nama penulis yang ada di tabel penulis yang akan di muncukan di index buku
     public function getPenulis()
     {
