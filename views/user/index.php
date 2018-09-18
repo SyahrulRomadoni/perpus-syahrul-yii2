@@ -45,7 +45,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         return $data->getUserRole();
                     }
                 ],
-                'status',
+                //'status',
 
                 [
                     'class' => 'yii\grid\ActionColumn',

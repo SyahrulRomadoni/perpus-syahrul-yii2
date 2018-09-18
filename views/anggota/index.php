@@ -38,6 +38,16 @@ $this->params['breadcrumbs'][] = $this->title;
                 'telepon',
                 'email:email',
                 //'status_aktif',
+                [
+                    'attribute' => 'status_aktif',
+                    'value' => function ($model) {
+                        if ($model->status_aktif == 1) {
+                            return "Aktif";
+                        } else {
+                            return "Tidak";
+                        }
+                    }
+                ],
 
                 ['class' => 'yii\grid\ActionColumn'],
             ],

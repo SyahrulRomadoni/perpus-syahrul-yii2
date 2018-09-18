@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 14 Sep 2018 pada 12.43
+-- Generation Time: 18 Sep 2018 pada 08.21
 -- Versi Server: 10.1.28-MariaDB
 -- PHP Version: 7.1.10
 
@@ -43,7 +43,7 @@ CREATE TABLE `anggota` (
 
 INSERT INTO `anggota` (`id`, `nama`, `alamat`, `telepon`, `email`, `status_aktif`) VALUES
 (8, 'anggota1', 'ala anggota11', '1242142353254', 'anggota1@gmail.com', 1),
-(9, 'anggota2', 'ala anggota2', '4235423424235', 'anggota2@gmail.com', 1);
+(9, 'anggota2', 'ala anggota2', '4235423424235', 'anggota2@gmail.com', 2);
 
 -- --------------------------------------------------------
 
@@ -146,7 +146,8 @@ INSERT INTO `peminjaman` (`id`, `id_buku`, `id_anggota`, `tanggal_pinjam`, `tang
 (7, 15, 8, '2018-09-12', '2018-09-19'),
 (8, 12, 9, '2018-09-12', '2018-09-19'),
 (9, 16, 8, '2018-09-13', '2018-09-20'),
-(10, 17, 8, '2018-09-13', '2018-09-20');
+(10, 17, 8, '2018-09-13', '2018-09-20'),
+(11, 17, 9, '2018-09-18', '2018-09-25');
 
 -- --------------------------------------------------------
 
@@ -346,7 +347,7 @@ ALTER TABLE `kategori`
 -- AUTO_INCREMENT for table `peminjaman`
 --
 ALTER TABLE `peminjaman`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `penerbit`

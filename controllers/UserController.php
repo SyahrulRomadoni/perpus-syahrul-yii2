@@ -12,6 +12,7 @@ use PhpOffice\PhpWord\IOFactory;
 use PhpOffice\PhpWord\PhpWord;
 use PhpOffice\PhpWord\Shared\Converter;
 use app\models\ChangePasswordForm;
+use yii\filters\AccessControl;
 
 /**
  * UserController implements the CRUD actions for User model.
@@ -24,6 +25,24 @@ class UserController extends Controller
     public function behaviors()
     {
         return [
+
+            // Access Control URL.
+            'access' => [
+                'class' => AccessControl::className(),
+                'rules' => [
+                    [
+                        'actions' => ['index', 'create'],
+                        'allow' => User::isAdmin() || User::isPetugas(),
+                        'roles' => ['@'],
+                    ],
+                    [
+                        'actions' => ['view', 'update'],
+                        'allow' => User::isAdmin() || User::isPetugas() || User::isAnggota(),
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
+
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [

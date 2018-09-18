@@ -2,6 +2,8 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
+use app\models\Buku;
+use app\models\Anggota;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\PeminjamanSearch */
@@ -46,7 +48,8 @@ $this->params['breadcrumbs'][] = $this->title;
 
                             // Cara 2 Pemanggil id_*** menjadi nama.
                             return $data->buku->nama;
-                        }
+                        },
+                        'filter'=>Buku::getList(),
                     ],
                     //'id_anggota',
                     [  
@@ -58,7 +61,8 @@ $this->params['breadcrumbs'][] = $this->title;
 
                             // Cara 2 Pemanggil id_*** menjadi nama.
                             return $data->anggota->nama;
-                        }
+                        },
+                        'filter'=>Anggota::getList(),
                     ],
                     'tanggal_pinjam',
                     // [
@@ -118,7 +122,8 @@ $this->params['breadcrumbs'][] = $this->title;
 
                             // Cara 2 Pemanggil id_*** menjadi nama.
                             return $data->buku->nama;
-                        }
+                        },
+                        'filter'=>Buku::getList(),
                     ],
                     //'id_anggota',
                     /*[  
@@ -180,7 +185,8 @@ $this->params['breadcrumbs'][] = $this->title;
 
                             // Cara 2 Pemanggil id_*** menjadi nama.
                             return $data->buku->nama;
-                        }
+                        },
+                        'filter'=>Buku::getList(),
                     ],
                     //'id_anggota',
                     [  
@@ -192,7 +198,8 @@ $this->params['breadcrumbs'][] = $this->title;
 
                             // Cara 2 Pemanggil id_*** menjadi nama.
                             return $data->anggota->nama;
-                        }
+                        },
+                        'filter'=>Anggota::getList(),
                     ],
                     'tanggal_pinjam',
                     'tanggal_kembali',
