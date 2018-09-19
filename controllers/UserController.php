@@ -36,7 +36,7 @@ class UserController extends Controller
                         'roles' => ['@'],
                     ],
                     [
-                        'actions' => ['view', 'update'],
+                        'actions' => ['view', 'update', 'change-password'],
                         'allow' => User::isAdmin() || User::isPetugas() || User::isAnggota(),
                         'roles' => ['@'],
                     ],

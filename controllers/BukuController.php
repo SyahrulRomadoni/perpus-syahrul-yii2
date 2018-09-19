@@ -34,7 +34,7 @@ class BukuController extends Controller
                 'class' => AccessControl::className(),
                 'rules' => [
                     [
-                        'actions' => ['index', 'update', 'create'],
+                        'actions' => ['index', 'update', 'create', 'daftar-buku-pdf'],
                         'allow' => User::isAdmin() || User::isPetugas(),
                         'roles' => ['@'],
                     ],
