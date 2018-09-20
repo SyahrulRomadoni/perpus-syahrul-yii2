@@ -74,6 +74,27 @@ $this->params['breadcrumbs'][] = $this->title;
                     //     'attribute' => 'tanggal_kembali',
                     //     'format'=> ['DateTime','php: Y / F / d - D'],
                     // ],
+                    //'status_buku',
+                    [
+                        'attribute' => 'status_buku',
+                        'value' => function ($model) {
+                            if ($model->status_buku == 0) {
+                                return "Belum Di Kembalikan";
+                            };
+                            if ($model->status_buku == 1) {
+                                return "Masi Di Pinjam";
+                            };
+                            if ($model->status_buku == 2) {
+                                return "Sudah Di Kembalikan";
+                            };
+                        },
+                        'filter'=>[
+                            0 => 'Belum Di Kembalikan',
+                            1 => 'Masi Di Pinjam',
+                            2 => 'Sudah Di Kembalikan',
+                        ],
+                    ],
+                    'tanggal_pengembalian_buku',
 
                     ['class' => 'yii\grid\ActionColumn'],
                 ],
@@ -139,8 +160,37 @@ $this->params['breadcrumbs'][] = $this->title;
                     ],*/
                     'tanggal_pinjam',
                     'tanggal_kembali',
+                    [
+                        'attribute' => 'status_buku',
+                        'value' => function ($model) {
+                            if ($model->status_buku == 0) {
+                                return "Belum Di Kembalikan";
+                            };
+                            if ($model->status_buku == 1) {
+                                return "Masi Di Pinjam";
+                            };
+                            if ($model->status_buku == 2) {
+                                return "Sudah Di Kembalikan";
+                            };
+                        },
+                        'filter'=>[
+                            0 => 'Belum Di Kembalikan',
+                            1 => 'Masi Di Pinjam',
+                            2 => 'Sudah Di Kembalikan',
+                        ],
+                    ],
+                    'tanggal_pengembalian_buku',
 
                     //['class' => 'yii\grid\ActionColumn'],
+                    [
+                        'class' => 'yii\grid\ActionColumn',
+                        'template' => '{kembalikan}',
+                        'buttons' => [
+                            'kembalikan' => function($url, $model, $key) {
+                                return Html::a('<i class="fa fa-book"></i>', ['kembalikan-buku', 'id' => $model->id], ['data' => ['confirm' => 'Apa anda yakin ingin mengembalikan Buku ini?'],]);
+                            }
+                        ]
+                    ],
                 ],
             ]); ?>
 
@@ -203,6 +253,26 @@ $this->params['breadcrumbs'][] = $this->title;
                     ],
                     'tanggal_pinjam',
                     'tanggal_kembali',
+                    [
+                        'attribute' => 'status_buku',
+                        'value' => function ($model) {
+                            if ($model->status_buku == 0) {
+                                return "Belum Di Kembalikan";
+                            };
+                            if ($model->status_buku == 1) {
+                                return "Masi Di Pinjam";
+                            };
+                            if ($model->status_buku == 2) {
+                                return "Sudah Di Kembalikan";
+                            };
+                        },
+                        'filter'=>[
+                            0 => 'Belum Di Kembalikan',
+                            1 => 'Masi Di Pinjam',
+                            2 => 'Sudah Di Kembalikan',
+                        ],
+                    ],
+                    'tanggal_pengembalian_buku',
 
                     ['class' => 'yii\grid\ActionColumn'],
                 ],

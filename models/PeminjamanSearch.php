@@ -19,8 +19,8 @@ class PeminjamanSearch extends Peminjaman
     public function rules()
     {
         return [
-            [['id', 'id_buku', 'id_anggota'], 'integer'],
-            [['tanggal_pinjam', 'tanggal_kembali'], 'safe'],
+            [['id', 'id_buku', 'id_anggota', 'status_buku'], 'integer'],
+            [['tanggal_pinjam', 'tanggal_kembali', 'tanggal_pengembalian_buku'], 'safe'],
         ];
     }
 
@@ -67,6 +67,8 @@ class PeminjamanSearch extends Peminjaman
                 'id_anggota' => $this->id_anggota,
                 'tanggal_pinjam' => $this->tanggal_pinjam,
                 'tanggal_kembali' => $this->tanggal_kembali,
+                'status_buku' => $this->status_buku,
+                'tanggal_pengembalian_buku' => $this->tanggal_pengembalian_buku,
             ]);
 
             return $dataProvider;
@@ -97,6 +99,8 @@ class PeminjamanSearch extends Peminjaman
                 'id_anggota' => $this->id_anggota,
                 'tanggal_pinjam' => $this->tanggal_pinjam,
                 'tanggal_kembali' => $this->tanggal_kembali,
+                'status_buku' => $this->status_buku,
+                'tanggal_pengembalian_buku' => $this->tanggal_pengembalian_buku,
             ]);
 
             return $dataProvider;
@@ -127,6 +131,8 @@ class PeminjamanSearch extends Peminjaman
                 'id_anggota' => $this->id_anggota,
                 'tanggal_pinjam' => $this->tanggal_pinjam,
                 'tanggal_kembali' => $this->tanggal_kembali,
+                'status_buku' => $this->status_buku,
+                'tanggal_pengembalian_buku' => $this->tanggal_pengembalian_buku,
             ]);
 
             return $dataProvider;

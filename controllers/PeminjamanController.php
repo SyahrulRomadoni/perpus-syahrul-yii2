@@ -33,7 +33,7 @@ class PeminjamanController extends Controller
                         'roles' => ['@'],
                     ],
                     [
-                        'actions' => ['index', 'create'],
+                        'actions' => ['index', 'create', 'kembalikan-buku'],
                         'allow' => User::isAdmin() || User::isPetugas() || User::isAnggota(),
                         'roles' => ['@'],
                     ],
@@ -86,12 +86,16 @@ class PeminjamanController extends Controller
     {
         $model = new Peminjaman();
         $model->id_buku = $id_buku;
+        $model->status_buku = 1;
+        $model->tanggal_pengembalian_buku = '0000-00-00';
 
         // Jika anggota meminjam buku maka auto crud
         if (Yii::$app->user->identity->id_user_role == 2) {
             $model->id_anggota = Yii::$app->user->identity->id_anggota;
             $model->tanggal_pinjam = date('Y-m-d');
             $model->tanggal_kembali = date('Y-m-d', strtotime('+7 days'));
+            $model->status_buku = 1;
+            $model->tanggal_pengembalian_buku = '0000-00-00';
 
             $model->save();
             return $this->redirect(['index']); 
@@ -154,5 +158,18 @@ class PeminjamanController extends Controller
         }
 
         throw new NotFoundHttpException('The requested page does not exist.');
+    }
+
+    // Resert password anggota yang bisa di pakai oleh admin dan petugas.
+    public function actionKembalikanBuku($id)
+    {
+        $model = Peminjaman::findOne($id);
+        $model->status_buku = 2;
+        $model->tanggal_pengembalian_buku = date('Y-m-d');
+
+        $model->save();
+
+        Yii::$app->session->setFlash('Berhasil', 'Buku sudah berhasil di kembalikan');
+        return $this->redirect(['peminjaman/index']);
     }
 }
