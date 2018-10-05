@@ -12,25 +12,9 @@ $config = [
         '@npm'   => '@vendor/npm-asset',
     ],
     'components' => [
-        'view' => [
-            'theme' => [
-                'pathMap' => [
-                   '@app/views' => '@app/themes/adminlte'
-                ],
-            ],
-        ],
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
-            'cookieValidationKey' => 'm9Rl2JH0yVqqH76NnKD-i8YwPEsRwAqS',
-            //'baseUrl' => '',
-        ],
-        'urlManager' => [
-            'enablePrettyUrl' => false,
-            'showScriptName' => false,
-            /*'rules' => [
-                '' => 'site/index',
-                '<action>'=>'site/<action>',
-            ],*/
+            'cookieValidationKey' => 'qojIT-UYruirbkWoxhGtZ2oBuKhKe3Qb',
         ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
@@ -85,17 +69,6 @@ if (YII_ENV_DEV) {
         'class' => 'yii\gii\Module',
         // uncomment the following to add your IP if you are not connecting from localhost.
         //'allowedIPs' => ['127.0.0.1', '::1'],
-    ];
-    $config['modules']['gii'] = [
-        'class' => 'yii\gii\Module',
-        'generators' => [
-            'crud' => [
-                'class' => 'yii\gii\generators\crud\Generator',
-                'templates' => [
-                    'Adminlte' => '@app/themes/adminlte/gii/crud',
-                ]
-            ],
-        ],
     ];
 }
 

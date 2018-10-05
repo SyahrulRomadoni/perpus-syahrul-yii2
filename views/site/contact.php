@@ -8,7 +8,7 @@ use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 use yii\captcha\Captcha;
 
-$this->title = 'Hubungi Kami';
+$this->title = 'Contact';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="site-contact">

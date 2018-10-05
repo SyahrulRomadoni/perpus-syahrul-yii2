@@ -1,4 +1,0 @@
-- //update password security masi blm
-- menghilang kan nama admin di view user index
-- pencarian buku di anggota
-- cara membuat status buku pinjam atau belum kembalik di luar tabel databases.
