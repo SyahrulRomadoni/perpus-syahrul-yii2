@@ -1,3 +1,3 @@
 # Perpus-yii2
 
-Perpustakaan Framework Yii2
+Perpustakaan Framework YII2
